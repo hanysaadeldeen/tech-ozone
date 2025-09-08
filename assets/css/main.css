@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    background-color: #F5F7FA
+}
+
+section,
+.section {
+    margin-top: 240px;
+}
+
+
+@media (max-width:768px) {
+
+    section,
+    .section {
+        margin-top: 120px;
+    }
+}
+
+
+.glassy {
+    background-color: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+}
