@@ -4,7 +4,7 @@
             <div class="relative ">
                 <div class="flex items-center justify-between gap-10">
                     <nuxt-link :to="localePath('index')" class="block relative ">
-                        <img src="~/assets/img/Utils/Logo.svg" class="h-[50px] w-fit  xl:h-[80px] relative block"
+                        <img src="~/assets/img/Utils/Logo.svg" class="max-w-fit xl:h-[80px] relative block"
                             alt="techOzone" height="80" width="186" loading="eager" fetchpriority="high" />
                     </nuxt-link>
                     <div class="hidden lg:block">
@@ -20,18 +20,18 @@
                                         القطاعات
                                     </nuxt-link>
                                 </li>
-                                <li :class="{ 'active': adjustedPath === '/projects' }">
-                                    <nuxt-link :to="localePath('projects')">
+                                <li :class="{ 'active': adjustedPath === '/about-us' }">
+                                    <nuxt-link :to="localePath('about-us')">
                                         عن Techozone
                                     </nuxt-link>
                                 </li>
-                                <li :class="{ 'active': adjustedPath === '/suppliers' }">
-                                    <nuxt-link :to="localePath('suppliers')">
+                                <li :class="{ 'active': adjustedPath === '/certificates-trust' }">
+                                    <nuxt-link :to="localePath('certificates-trust')">
                                         الاعتمادات والثقة
                                     </nuxt-link>
                                 </li>
-                                <li :class="{ 'active': adjustedPath.includes('/products') }">
-                                    <nuxt-link :to="localePath('products')">
+                                <li :class="{ 'active': adjustedPath.includes('/gallery') }">
+                                    <nuxt-link :to="localePath('gallery')">
                                         المعرض
                                     </nuxt-link>
                                 </li>
@@ -40,11 +40,11 @@
                     </div>
                     <div class="hidden lg:flex  justify-between items-center gap-2 xl:gap-6">
                         <LanguageSwitcher />
-                        <nuxt-link :to="localePath('contactUs')">
+                        <nuxt-link :to="localePath('contact-us')">
                             <Button title="تواصل معنا" background="#092892" />
                         </nuxt-link>
                     </div>
-                    <div class="lg:hidden text-2xl cursor-pointer sm:text-3xl">
+                    <div class="lg:hidden text-2xl cursor-pointer sm:text-3xl z-[35]">
                         <i class="fa-solid fa-bars-staggered " :class="{ hidden: isSideBar }" @click="toggleSidebar" />
                         <i class="fa-solid fa-xmark text-white" :class="{ hidden: !isSideBar }"
                             @click="toggleSidebar" />
@@ -64,55 +64,55 @@
                         <nav class="mt-4 inline-block w-full">
                             <ul class="flex flex-col gap-5">
                                 <li :class="[
-                                    active && adjustedPath === '/',
+                                    { 'active': adjustedPath === '/' },
                                     'text-white hover:text-PrimaryPL3',
                                 ]">
                                     <nuxt-link :to="localePath('index')" @click="isSideBar = !isSideBar" class="w-full">
-                                        {{ $t("header.home") }}
+                                        الرئيسية
                                     </nuxt-link>
                                 </li>
                                 <li :class="[
-                                    active && adjustedPath === '/company',
+                                    { 'active': adjustedPath === '/about-us' },
                                     'text-white hover:text-PrimaryPL3',
                                 ]">
-                                    <nuxt-link :to="localePath('company')" @click="isSideBar = !isSideBar"
+                                    <nuxt-link :to="localePath('about-us')" @click="isSideBar = !isSideBar"
                                         class="w-full">
-                                        {{ $t("header.about") }}
+                                        عن Techozone
                                     </nuxt-link>
                                 </li>
                                 <li :class="[
-                                    active && adjustedPath === '/projects',
+                                    { 'active': adjustedPath === '/sectors' },
                                     'text-white hover:text-PrimaryPL3',
                                 ]">
-                                    <nuxt-link :to="localePath('projects')" @click="isSideBar = !isSideBar"
+                                    <nuxt-link :to="localePath('sectors')" @click="isSideBar = !isSideBar"
                                         class="w-full">
-                                        {{ $t("header.projects") }}
+                                        القطاعات
                                     </nuxt-link>
                                 </li>
                                 <li :class="[
-                                    active && adjustedPath === '/suppliers',
+                                    { 'active': adjustedPath === '/certificates-trust' },
                                     'text-white hover:text-PrimaryPL3',
                                 ]">
-                                    <nuxt-link :to="localePath('suppliers')" @click="isSideBar = !isSideBar"
+                                    <nuxt-link :to="localePath('certificates-trust')" @click="isSideBar = !isSideBar"
                                         class="w-full">
-                                        {{ $t("header.suppliers") }}
+                                        الاعتمادات والثقة
                                     </nuxt-link>
                                 </li>
                                 <li :class="[
-                                    active && adjustedPath === '/products',
+                                    { 'active': adjustedPath === '/gallery' },
                                     'text-white hover:text-PrimaryPL3',
                                 ]">
-                                    <nuxt-link :to="localePath('products')" @click="isSideBar = !isSideBar"
+                                    <nuxt-link :to="localePath('gallery')" @click="isSideBar = !isSideBar"
                                         class="w-full">
-                                        {{ $t("header.products") }}
+                                        المعرض
                                     </nuxt-link>
                                 </li>
                             </ul>
                         </nav>
                         <div class="mt-5 justify-between flex-col ">
-                            <LanguageSwitcher />
-                            <nuxt-link :to="localePath('contact')" class="mt-6 relative block">
-                                <Button title="header.contact" />
+                            <LanguageSwitcher isWhite />
+                            <nuxt-link :to="localePath('contact-us')">
+                                <Button title="تواصل معنا" background="#092892" />
                             </nuxt-link>
                         </div>
                     </div>
@@ -233,9 +233,9 @@ ul li.active {
 }
 
 .sideBar {
-    background: linear-gradient(to right, #0a0911, #0a0911f5);
-    opacity: 0.9;
-    will-change: transform;
+    background: linear-gradient(to right,
+            rgba(10, 9, 17, 0.9),
+            rgba(10, 9, 17, 0.96));
 }
 
 

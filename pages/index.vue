@@ -1,7 +1,9 @@
 <template>
   <main class="MainPage ">
     <div class="max-w-[1208px] mx-auto">
-      <h1>Home</h1>
+
+
+      <section-title btnText="طريقة TechOzone" description="خدمة متكاملة تبدأ بالتوريد وتنتهي بالدعم الفني" />
     </div>
   </main>
 </template>

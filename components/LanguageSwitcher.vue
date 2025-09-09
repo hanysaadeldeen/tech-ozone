@@ -2,8 +2,8 @@
   <div class="language-switcher">
     <button @click="switchLanguage"
       class=" hover:text-PrimaryPL3 flex items-center gap-2 transition-all duration-300  ease-in-out"
-      :class="isWhite ? 'text-white px-6' : 'text-primary'">
-      <span class="text-base font-normal">
+      :class="isWhite ? 'text-white ' : 'text-primary'">
+      <span class="text-base font-medium">
         {{
           currentLocale === "en" ? "AR" : "EN"
         }}

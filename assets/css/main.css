@@ -31,7 +31,16 @@ section,
 
 
 .glassy {
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(9, 40, 146, 0.12);
     backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
+
+}
+
+.boxShadow {
+    box-shadow: 0 0 16px 8px rgba(9, 40, 146, 0.04)
+}
+
+.boxShadow2 {
+    box-shadow: 0 0 16px 8px rgba(255, 255, 255, 0.2)
 }
