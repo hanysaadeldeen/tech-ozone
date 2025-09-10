@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-2xl  py-3 flex justify-center items-center" :style="{ backgroundColor: background }">
+    <div class="rounded-2xl  p-3 flex justify-center items-center" :style="{ backgroundColor: background }">
         <slot />
     </div>
 </template>
