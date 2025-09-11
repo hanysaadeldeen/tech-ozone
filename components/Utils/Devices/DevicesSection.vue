@@ -7,7 +7,7 @@
                     :details="device.details" :img="device.img" />
             </div>
         </div>
-        <Button title="استعرض جميع أجهزة TechOzone" background="#092892" link="/products" />
+        <Button title="استعرض جميع أجهزة TechOzone" background="#092892" link="/devices" />
     </section>
 </template>
 

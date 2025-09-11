@@ -1,7 +1,13 @@
 <template>
     <main class="SectorsPage ">
+        <SectorsHeroSection />
         <div class="max-w-[1208px] mx-auto">
-            <h1>sectors</h1>
+            <SectorsSection />
+        </div>
+        <SectorsStatisticsSection />
+        <div class="max-w-[1208px] mx-auto">
+            <DevicesSection />
+            <SuccessPartenerClients />
         </div>
 
     </main>

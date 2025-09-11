@@ -1,9 +1,9 @@
 <template>
-    <header class="relative z-20 max-2xl:px-6 py-4 md:py-6 text-primary  border-b border-[#FFFFFF1F]">
+    <header class="relative z-20 max-2xl:px-6 py-4 md:py-6 text-primary  border-b border-[#FFFFFF1F] bg-white">
         <div class="mx-auto max-w-[1208px] ">
             <div class="relative ">
                 <div class="flex items-center justify-between gap-10">
-                    <nuxt-link :to="localePath('index')" class="block relative ">
+                    <nuxt-link :to="localePath('/')" class="block relative ">
                         <img src="~/assets/img/Utils/Logo.svg" class="max-w-fit xl:h-[80px] relative block"
                             alt="techOzone" height="80" width="186" loading="eager" fetchpriority="high" />
                     </nuxt-link>

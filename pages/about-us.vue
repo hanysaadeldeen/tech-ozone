@@ -1,7 +1,14 @@
 <template>
     <main class="aboutUs ">
         <div class="max-w-[1208px] mx-auto">
-            <h1>aboutUs</h1>
+            <AboutContent />
+            <VisionAndMission />
+            <StrategicGoals />
+            <CoresSection />
+        </div>
+        <WhyUsSection />
+        <div class="max-w-[1208px] mx-auto">
+
         </div>
 
     </main>

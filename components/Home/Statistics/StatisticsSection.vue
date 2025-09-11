@@ -2,11 +2,11 @@
     <section class="StatisticsSection max-2xl:px-6 ">
         <div class="max-w-[912px] mx-auto">
             <section-title btnText="الإحصائيات" description="أرقام تعكس خبرتنا وإنجازاتنا" />
-            <div class="mb-20 relative">
+            <div class=" relative">
                 <div
                     class="max-md:hidden absolute top-1/2  left-1/2 -translate-y-1/2 -translate-x-1/2  -z-10 w-full h-full max-w-[704px] max-h-[704px]">
-                    <img src="~/assets/img/Statistics.svg" alt="Statistics.svg" width="704" height="704"
-                        class="max-w-full mx-auto">
+                    <img src="~/assets/img/Statistics.svg" alt="Statistics" width="704" height="704"
+                        class="max-w-full mx-auto" loading="lazy">
                 </div>
                 <div class="flex justify-center">
                     <StatisticsCard :number="14" title="سنوات خبرة" description="في مجال التطهير بالأوزون" />

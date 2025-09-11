@@ -4,7 +4,13 @@
         <div class="max-w-[1208px] mx-auto">
             <section-title isWhite btnText="لماذا TechOzone؟"
                 description="أربع ركائز تجعلنا الخيار الأمثل في التعقيم بالأوزون" />
-            <div class="flex flex-col gap-6  relative">
+            <div class="flex flex-col gap-6 md:gap-10 relative">
+
+                <div
+                    class="max-lg:hidden absolute top-1/2  left-1/2 -translate-y-1/2 -translate-x-1/2   z-10 w-full h-full max-w-[704px] max-h-[704px]">
+                    <img src="~/assets/img/WhyShape.svg" alt="WhyShape" class="max-w-full mx-auto" loading="lazy"
+                        width="580" height="380">
+                </div>
                 <div class="flex justify-between gap-6 max-md:flex-col">
                     <WhyUsCard v-for="card in CorCards.slice(0, 2)" :key="card.id" :title="card.title"
                         :description="card.description" :background="card.background">

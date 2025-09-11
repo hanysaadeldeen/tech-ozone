@@ -1,7 +1,11 @@
 <template>
     <main class="CertificatesAndTrust ">
         <div class="max-w-[1208px] mx-auto">
-            <h1>CertificatesAndTrust</h1>
+            <InternationalCertificatesSection />
+            <LocalCertificatesSection />
+            <ScientificPartnershipsSection />
+            <SuccessPartenerClients />
+            <OurTeamSection />
         </div>
 
     </main>

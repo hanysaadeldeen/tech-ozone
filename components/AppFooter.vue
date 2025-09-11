@@ -3,7 +3,7 @@
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between gap-6 md:gap-10 lg:gap-20 max-w-[1208px] mx-auto pb-10 md:pb-14 max-2xl:px-6 relative border-b border-TextL">
       <div class="flex-grow">
-        <nuxt-link :to="localePath('index')" class="block relative ">
+        <nuxt-link :to="localePath('index')" class="block relative cursor-pointer">
           <img src="~/assets/img/Utils/LogoH.svg" class="h-[50px] w-fit  xl:h-[80px] relative block" alt="techOzone"
             height="80" width="186" loading="lazy" />
         </nuxt-link>
