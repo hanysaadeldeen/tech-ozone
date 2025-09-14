@@ -3,11 +3,12 @@
         <section-title btnText="القطاعات" description="نخدم قطاعات حساسة... بحلول أوزونية آمنة وفعالة" />
         <div class="mb-20 relative">
             <div class="flex justify-center gap-6 md:gap-10  flex-wrap">
-                <SectorCard v-for="card in CorCards" :key="card.id" :title="card.title" :description="card.description">
+
+                <SectorCard v-for="(card, index) in CorCards" :key="card.id" :title="card.title"
+                    :description="card.description" :id="(index + 1).toString()">
                     <img :src="card.img" :alt="card.title" width="24" height="24">
                 </SectorCard>
             </div>
-
         </div>
         <Button title="استعرض كل القطاعات" background="#092892" link="/sectors" />
     </section>

@@ -1,10 +1,11 @@
 <template>
-    <section class="privacy  relative " :dir="locale === 'ar' ? 'rtl' : 'ltr'">
-        <!-- <HeroSection title="privacy.heroSection.title" description="privacy.heroSection.paragraph" /> -->
+    <main class="privacy  relative ">
+
+        <GredientHero title="سياسة الخصوصية"
+            description="توضح هذه السياسة كيفية جمع وحماية بياناتك لدى Techozone وفق أعلى معايير الأمان والشفافية." />
 
 
-
-        <div class="relative z-20 max-w-[1208px] mx-auto">
+        <div class="relative z-20 max-w-[1208px] mx-auto mt-[120px]">
             <div class="relative container max-sm:px-4 mx-auto px-2">
                 <div class="terms-page flex justify-between" :key="locale">
                     <main class="content lg:max-w-[584px]">
@@ -42,7 +43,7 @@
             </div>
         </div>
 
-    </section>
+    </main>
 
 
 </template>

@@ -1,6 +1,5 @@
 <template>
-    <section
-        class="WhyUsSection max-2xl:px-6 py-[120px] bg-[linear-gradient(to_right,#43236A_0%,#10278C_20%,#10278C_80%,#43236A_100%)]">
+    <section class="WhyUsSection gradientBg max-2xl:px-6 py-[120px] ">
         <div class="max-w-[1208px] mx-auto">
             <section-title isWhite btnText="لماذا TechOzone؟"
                 description="أربع ركائز تجعلنا الخيار الأمثل في التعقيم بالأوزون" />
@@ -11,13 +10,13 @@
                     <img src="~/assets/img/WhyShape.svg" alt="WhyShape" class="max-w-full mx-auto" loading="lazy"
                         width="580" height="380">
                 </div>
-                <div class="flex justify-between gap-6 max-md:flex-col">
+                <div class="flex justify-between gap-6 max-md:flex-col z-10 relative">
                     <WhyUsCard v-for="card in CorCards.slice(0, 2)" :key="card.id" :title="card.title"
                         :description="card.description" :background="card.background">
                         <img :src="card.img" :alt="card.title" width="24" height="24">
                     </WhyUsCard>
                 </div>
-                <div class="flex justify-between gap-6 max-md:flex-col">
+                <div class="flex justify-between gap-6 max-md:flex-col z-10 relative">
                     <WhyUsCard v-for="card in CorCards.slice(2, 4)" :key="card.id" :title="card.title"
                         :description="card.description" :background="card.background">
                         <img :src="card.img" :alt="card.title" width="24" height="24">

@@ -1,7 +1,8 @@
 <template>
     <main class="gallery ">
+        <GalleryHeroSection />
         <div class="max-w-[1208px] mx-auto">
-            <h1>gallery</h1>
+            <GalleryProjects />
         </div>
 
     </main>

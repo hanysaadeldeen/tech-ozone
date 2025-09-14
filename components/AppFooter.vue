@@ -20,7 +20,7 @@
                 من نحن
               </nuxt-link>
             </li>
-            <li :class="{ 'active': adjustedPath === '/sectors' }">
+            <li :class="{ 'active': adjustedPath.includes('/sectors') }">
               <nuxt-link :to="localePath('/sectors')">
                 القطاعات
               </nuxt-link>

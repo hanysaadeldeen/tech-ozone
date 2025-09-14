@@ -15,7 +15,7 @@
                                         الرئيسية
                                     </nuxt-link>
                                 </li>
-                                <li :class="{ 'active': adjustedPath === '/sectors' }">
+                                <li :class="{ 'active': adjustedPath.includes('/sectors') }">
                                     <nuxt-link :to="localePath('sectors')">
                                         القطاعات
                                     </nuxt-link>
@@ -81,7 +81,7 @@
                                     </nuxt-link>
                                 </li>
                                 <li :class="[
-                                    { 'active': adjustedPath === '/sectors' },
+                                    { 'active': adjustedPath.includes('/sectors') },
                                     'text-white hover:text-PrimaryPL3',
                                 ]">
                                     <nuxt-link :to="localePath('sectors')" @click="isSideBar = !isSideBar"

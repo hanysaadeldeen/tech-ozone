@@ -1,6 +1,6 @@
 <template>
     <div
-        class="CorCard boxShadow rounded-3xl py-6 px-4 md:py-10  md:px-8 flex flex-col gap-4 md:gap-6 max-sm:w-full md:w-1/2 lg:max-w-[376px] max-md:mx-auto">
+        class="bg-white CorCard boxShadow rounded-3xl py-6 px-4 md:py-10  md:px-8 flex flex-col gap-4 md:gap-6 max-sm:w-full md:w-1/2 lg:max-w-[376px] max-md:mx-auto relative ">
         <div class="boxShadow numberCard py-2 w-fit mx-auto px-4 rounded-2xl  text-white text-xl font-semibold flex items-center justify-center"
             :style="{ background: background }">
             {{ number }}

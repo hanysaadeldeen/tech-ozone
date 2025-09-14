@@ -1,6 +1,6 @@
 <template>
     <section class="SectorsSection  max-2xl:px-6">
-        <section-title btnText="أجهزة TechOzone" description="أجهزة تعقيم للمنشآت الحيوية" />
+        <section-title btnText="أنظمة TechOzone" description="أجهزة تعقيم للمنشآت الحيوية" />
         <div class="mb-20 relative">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                 <DeviceCard v-for="device in Devices" :title="device.title" :description="device.description"

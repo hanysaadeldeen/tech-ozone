@@ -6,3 +6,5 @@
     <AppFooter />
   </div>
 </template>
+
+<style></style>

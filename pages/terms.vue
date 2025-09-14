@@ -1,9 +1,11 @@
 <template>
-    <section class="terms relative " :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+    <main class="terms relative ">
+        <GredientHero title="الشروط والأحكام"
+            description="تحدد هذه الشروط القواعد والأحكام المنظمة لاستخدامك لموقع وخدمات Techozone." />
 
-        <!-- <HeroSection title="terms.heroSection.title" description="terms.heroSection.paragraph" /> -->
 
-        <div class="relative z-20 max-w-[1208px] mx-auto">
+
+        <div class="relative z-20 max-w-[1208px] mx-auto mt-[120px]">
             <div class="relative container max-sm:px-4 mx-auto px-2">
                 <div class="terms-page flex justify-between" :key="locale">
                     <main class="content lg:max-w-[584px]" :class="locale === 'ar'
@@ -44,7 +46,7 @@
             </div>
         </div>
 
-    </section>
+    </main>
 
 
 </template>

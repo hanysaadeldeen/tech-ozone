@@ -1,5 +1,7 @@
 <template>
     <main class="aboutUs ">
+        <AboutHeroSection />
+        <AboutQuote />
         <div class="max-w-[1208px] mx-auto">
             <AboutContent />
             <VisionAndMission />

@@ -1,12 +1,20 @@
 <template>
-    <section class="CoreSection max-2xl:px-6">
+    <section class="CoreSection max-2xl:px-6 relative">
         <section-title btnText="طريقة TechOzone" description="خدمة متكاملة تبدأ بالتوريد وتنتهي بالدعم الفني" />
+
+
+
         <div class="flex flex-col gap-6 mb-20 relative">
-            <div class="flex justify-between gap-6 max-md:flex-col">
+            <div
+                class="max-lg:hidden absolute top-1/2  left-1/2 -translate-y-1/2 -translate-x-1/2   -z-10 w-full h-full max-w-[580px] max-h-[380px]">
+                <img src="~/assets/img/CoreShape.svg" alt="CoreShape" class="max-w-full mx-auto" loading="lazy"
+                    width="580" height="380">
+            </div>
+            <div class="flex justify-between gap-6 max-md:flex-col ">
                 <CorCard v-for="card in CorCards.slice(0, 2)" :key="card.id" :number="card.number" :title="card.title"
                     :description="card.description" :background="card.background" />
             </div>
-            <div class="flex justify-between gap-6 max-md:flex-col">
+            <div class="flex justify-between gap-6 max-md:flex-col ">
                 <CorCard v-for="card in CorCards.slice(2, 4)" :key="card.id" :number="card.number" :title="card.title"
                     :description="card.description" :background="card.background" />
             </div>

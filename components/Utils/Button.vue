@@ -1,7 +1,9 @@
 <template>
     <nuxt-link :to="link">
-        <button class="block rounded-full text-base font-medium py-2 px-12 text-white mx-auto"
+        <button
+            class="  rounded-full text-base font-medium py-2 px-12 text-white mx-auto flex items-center justify-center"
             :style="{ 'backgroundColor': background }">
+            <slot />
             {{ title }}
         </button>
     </nuxt-link>

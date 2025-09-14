@@ -1,5 +1,6 @@
 <template>
     <main class="CertificatesAndTrust ">
+        <CertificatesHeroSection />
         <div class="max-w-[1208px] mx-auto">
             <InternationalCertificatesSection />
             <LocalCertificatesSection />
