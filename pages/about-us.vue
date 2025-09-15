@@ -10,7 +10,7 @@
         </div>
         <WhyUsSection />
         <div class="max-w-[1208px] mx-auto">
-
+            <OurJourneySection />
         </div>
 
     </main>
