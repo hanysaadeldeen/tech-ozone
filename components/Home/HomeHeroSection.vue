@@ -1,14 +1,13 @@
 <template>
-    <div class="carousel" ref="carouselRef">
+    <div class="carousel  " ref="carouselRef">
 
-        <div class="list bg-blue-600">
-            <div class="item" v-for="(slide, i) in slides" :key="i">
+        <div class="list  relative w-full h-full ">
+            <div class="item " v-for="(slide, i) in slides" :key="i">
 
-                <img :src="slide.img" class="brightness-[0.4]" />
-                <div class="content">
+                <img :src="slide.img" class="brightness-[0.4]" :alt="slide.title" />
+                <div class=" content xl:mr-[calc((100vw-1208px)/2)]">
                     <div class="title text-white text-2xl md:text-4xl lg:text-5xl font-semibold mb-4">{{ slide.title }}
                     </div>
-                    <div class="topic">{{ slide.topic }}</div>
                     <div class="des max-w-[480px] text-TextL text-xl font-normal">{{ slide.description }}</div>
                     <div class="buttons flex justify-start">
                         <Button title="احجز استشارة مجانية" background="#ED2024" link="contact-us" />
@@ -20,14 +19,17 @@
 
         <div class="thumbnail">
             <div class="item" v-for="(slide, i) in slides" :key="'thumb-' + i">
-                <img :src="slide.img" />
+                <img :src="slide.img" :alt="slide.title" />
             </div>
         </div>
 
-        <div class="arrows">
-            <button ref="prevRef">
-                < </button>
-                    <button ref="nextRef">></button>
+        <div class="arrows ">
+            <button ref="nextRef" class="glassyW boxShadow flex justify-center items-center">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button ref="prevRef" class="glassyW boxShadow flex justify-center items-center">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
         </div>
 
     </div>
@@ -135,7 +137,7 @@ onBeforeUnmount(() => {
 /* carousel */
 .carousel {
     height: 100vh;
-    margin-top: -129px;
+    margin-top: -112px;
     width: 100vw;
     overflow: hidden;
     position: relative;
@@ -157,16 +159,20 @@ onBeforeUnmount(() => {
 
 .carousel .list .item .content {
     position: absolute;
+    width: 584px;
     top: 50%;
-    width: 1140px;
-    max-width: 80%;
-    right: -50%;
-    transform: translate(-50%, -50%);
-    padding-right: 30%;
-    box-sizing: border-box;
+    right: 0;
+    transform: translateY(-50%);
     color: #fff;
+
+
 }
 
+.carousel .list .item .content .title,
+.carousel .list .item .content .des,
+.carousel .list .item .content .buttons {
+    padding: 0 20px;
+}
 
 .carousel .list .item .buttons {
     margin-top: 40px;
@@ -174,11 +180,12 @@ onBeforeUnmount(() => {
 
 
 
+
 /* thumbail */
 .thumbnail {
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    right: 50%;
     width: max-content;
     z-index: 100;
     display: flex;
@@ -204,12 +211,13 @@ onBeforeUnmount(() => {
 .arrows {
     position: absolute;
     bottom: 10%;
-    right: 70%;
+    right: 30%;
     transform: translateX(20%);
     z-index: 100;
     width: 300px;
     max-width: 30%;
-    display: flex;
+    /* display: flex; */
+    display: none;
     gap: 10px;
     align-items: center;
 }
@@ -218,9 +226,9 @@ onBeforeUnmount(() => {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #AFC1C5;
+    /* background-color: #AFC1C5; */
     border: none;
-    color: #092892;
+    color: white;
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
@@ -235,6 +243,27 @@ onBeforeUnmount(() => {
 .carousel .list .item:nth-child(1) {
     z-index: 1;
 }
+
+
+@media (max-width: 1024px) {
+
+    .arrows,
+    .thumbnail {
+        display: none;
+    }
+
+
+    .carousel .list .item .content {
+        width: 100%;
+    }
+
+    .carousel .list .item .content .title,
+    .carousel .list .item .content .des,
+    .carousel .list .item .content .buttons {
+        padding: 0 24px;
+    }
+}
+
 
 /* animation text in first item */
 
@@ -259,10 +288,6 @@ onBeforeUnmount(() => {
 
 .carousel .list .item:nth-child(1) .content .title {
     animation-delay: 1.2s !important;
-}
-
-.carousel .list .item:nth-child(1) .content .topic {
-    animation-delay: 1.4s !important;
 }
 
 .carousel .list .item:nth-child(1) .content .des {
