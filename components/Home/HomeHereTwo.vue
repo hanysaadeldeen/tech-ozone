@@ -1,7 +1,7 @@
 <template>
     <div class="carousel relative">
 
-        <div class="swiper tinyflow-slider relative bg-green-400" :data-speed="1000" :data-autoplay-delay="8000">
+        <div class="swiper tinyflow-slider relative bg-[#F5F7FA]" :data-speed="1000" :data-autoplay-delay="8000">
             <div
                 class=" flex justify-center items-center gap-6 absolute bottom-[15%] right-0   w-full text-center z-10 ">
                 <button type="button" aria-label="Prev" ref="prevEl"
