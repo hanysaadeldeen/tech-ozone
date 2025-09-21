@@ -1,6 +1,8 @@
 <template>
   <main class="MainPage overflow-hidden">
-    <HomeHeroSection />
+    <!-- <HomeHeroSection /> -->
+    <HomeHereTwo />
+
     <div class="max-w-[1208px] mx-auto">
       <CoresSection />
       <SectorsSection />

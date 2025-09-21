@@ -17,7 +17,7 @@
         </div>
         <div class="max-w-[1000px] mx-auto w-full relative">
             <div class="flex justify-center items-center flex-col">
-                <h1 class="text-3xl md:text-5xl   lg:!leading-[72px] text-TextD font-semibold text-center mb-2">
+                <h1 class=" text-2xl md:text-3xl lg:text-5xl text-TextD font-semibold text-center mb-2">
                     ريادة سعودية في التعقيم المتكامل
                 </h1>
                 <p class="mx-auto max-w-[584px] text-lg md:text-xl text-TextMD font-normal text-center mb-8 md:mb-12">
