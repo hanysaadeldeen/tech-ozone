@@ -57,11 +57,6 @@
       </div>
       <section class="GalleryProjects max-2xl:px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-          <!-- <GalleryProjects
-            v-for="img in photography"
-            :img="img.src"
-            @openModalImg="openModal"
-          /> -->
           <div
             class="boxShadow rounded-3xl group overflow-hidden cursor-pointer relative"
             v-for="img in visibleItems"
@@ -82,6 +77,7 @@
               :src="img.src"
               alt="gallery"
               width="584"
+              loading="lazy"
               height="400"
               class="w-full h-full brightness-[0.8] group-hover:brightness-100 transition-all ease-in-out duration-300 rounded-3xl group-hover:scale-110"
               @click="openModal(img.src)"
@@ -109,6 +105,7 @@
       <img
         :src="selectedImage"
         :alt="'Portfolio Photography'"
+        loading="lazy"
         class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
       />
     </div>
@@ -181,7 +178,6 @@ const isModalOpen = ref(false);
 const selectedImage = ref("");
 
 const openModal = (imageSrc: string) => {
-  console.log(imageSrc);
   selectedImage.value = imageSrc;
   isModalOpen.value = true;
   document.body.style.overflow = "hidden";
