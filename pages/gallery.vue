@@ -147,7 +147,7 @@ import twenteOne from "~/assets/img/Gallery/twenteOne.svg";
 import twenteTwo from "~/assets/img/Gallery/twenteTwo.svg";
 import twenteThree from "~/assets/img/Gallery/twenteThree.webp";
 import twenteFour from "~/assets/img/Gallery/twenteFour.svg";
-import twenteFive from "~/assets/img/Gallery/twenteFive.svg";
+// import twenteFive from "~/assets/img/Gallery/twenteFive.svg";
 
 const photography = [
   // { id: 1, name: "one", src: one },
@@ -174,7 +174,7 @@ const photography = [
   { id: 22, name: "twenteTwo", src: twenteTwo },
   { id: 23, name: "twenteThree", src: twenteThree },
   { id: 24, name: "twenteFour", src: twenteFour },
-  { id: 25, name: "twenteFive", src: twenteFive },
+  // { id: 25, name: "twenteFive", src: twenteFive },
 ];
 
 const isModalOpen = ref(false);
