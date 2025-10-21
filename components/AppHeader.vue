@@ -5,7 +5,7 @@
     <div class="mx-auto max-w-[1208px]">
       <div class="relative">
         <div class="flex items-center justify-between gap-10">
-          <nuxt-link :to="localePath('/')" class="block relative">
+          <nuxt-link :to="localePath('/')" class="block relative z-40">
             <img
               src="~/assets/img/Utils/Logo.svg"
               class="max-w-fit xl:h-[60px] relative block"
@@ -19,25 +19,31 @@
           <div class="hidden lg:block">
             <nav class="relative h-full">
               <ul class="flex items-center">
-                <li :class="{ active: adjustedPath === '/' }">
-                  <nuxt-link :to="localePath('index')"> الرئيسية </nuxt-link>
-                </li>
-                <li :class="{ active: adjustedPath.includes('/sectors') }">
-                  <nuxt-link :to="localePath('sectors')"> القطاعات </nuxt-link>
-                </li>
-                <li :class="{ active: adjustedPath === '/about-us' }">
-                  <nuxt-link :to="localePath('about-us')">
-                    عن Techozone
-                  </nuxt-link>
-                </li>
-                <li :class="{ active: adjustedPath === '/certificates-trust' }">
-                  <nuxt-link :to="localePath('certificates-trust')">
+                <nuxt-link :to="localePath('index')">
+                  <li :class="{ active: adjustedPath === '/' }">الرئيسية</li>
+                </nuxt-link>
+                <nuxt-link :to="localePath('sectors')">
+                  <li :class="{ active: adjustedPath.includes('/sectors') }">
+                    القطاعات
+                  </li>
+                </nuxt-link>
+                <nuxt-link :to="localePath('about-us')">
+                  <li :class="{ active: adjustedPath === '/about-us' }">
+                    عن الشركة السعودية للأوزون
+                  </li>
+                </nuxt-link>
+                <nuxt-link :to="localePath('certificates-trust')">
+                  <li
+                    :class="{ active: adjustedPath === '/certificates-trust' }"
+                  >
                     الاعتمادات والثقة
-                  </nuxt-link>
-                </li>
-                <li :class="{ active: adjustedPath.includes('/gallery') }">
-                  <nuxt-link :to="localePath('gallery')"> المعرض </nuxt-link>
-                </li>
+                  </li>
+                </nuxt-link>
+                <nuxt-link :to="localePath('gallery')">
+                  <li :class="{ active: adjustedPath.includes('/gallery') }">
+                    المعرض
+                  </li>
+                </nuxt-link>
               </ul>
             </nav>
           </div>
@@ -77,76 +83,76 @@
           <div class="pt-[83px] lg:pt-[100px]">
             <nav class="mt-4 inline-block w-full">
               <ul class="flex flex-col gap-5">
-                <li
-                  :class="[
-                    { active: adjustedPath === '/' },
-                    'text-white hover:text-PrimaryPL3',
-                  ]"
+                <nuxt-link
+                  :to="localePath('index')"
+                  @click="isSideBar = !isSideBar"
+                  class="w-full"
                 >
-                  <nuxt-link
-                    :to="localePath('index')"
-                    @click="isSideBar = !isSideBar"
-                    class="w-full"
+                  <li
+                    :class="[
+                      { active: adjustedPath === '/' },
+                      'text-white hover:text-PrimaryPL3',
+                    ]"
                   >
                     الرئيسية
-                  </nuxt-link>
-                </li>
-                <li
-                  :class="[
-                    { active: adjustedPath === '/about-us' },
-                    'text-white hover:text-PrimaryPL3',
-                  ]"
+                  </li>
+                </nuxt-link>
+                <nuxt-link
+                  :to="localePath('about-us')"
+                  @click="isSideBar = !isSideBar"
+                  class="w-full"
                 >
-                  <nuxt-link
-                    :to="localePath('about-us')"
-                    @click="isSideBar = !isSideBar"
-                    class="w-full"
+                  <li
+                    :class="[
+                      { active: adjustedPath === '/about-us' },
+                      'text-white hover:text-PrimaryPL3',
+                    ]"
                   >
-                    عن Techozone
-                  </nuxt-link>
-                </li>
-                <li
-                  :class="[
-                    { active: adjustedPath.includes('/sectors') },
-                    'text-white hover:text-PrimaryPL3',
-                  ]"
+                    عن الشركة السعودية للأوزون
+                  </li>
+                </nuxt-link>
+                <nuxt-link
+                  :to="localePath('sectors')"
+                  @click="isSideBar = !isSideBar"
+                  class="w-full"
                 >
-                  <nuxt-link
-                    :to="localePath('sectors')"
-                    @click="isSideBar = !isSideBar"
-                    class="w-full"
+                  <li
+                    :class="[
+                      { active: adjustedPath.includes('/sectors') },
+                      'text-white hover:text-PrimaryPL3',
+                    ]"
                   >
                     القطاعات
-                  </nuxt-link>
-                </li>
-                <li
-                  :class="[
-                    { active: adjustedPath === '/certificates-trust' },
-                    'text-white hover:text-PrimaryPL3',
-                  ]"
+                  </li>
+                </nuxt-link>
+                <nuxt-link
+                  :to="localePath('certificates-trust')"
+                  @click="isSideBar = !isSideBar"
+                  class="w-full"
                 >
-                  <nuxt-link
-                    :to="localePath('certificates-trust')"
-                    @click="isSideBar = !isSideBar"
-                    class="w-full"
+                  <li
+                    :class="[
+                      { active: adjustedPath === '/certificates-trust' },
+                      'text-white hover:text-PrimaryPL3',
+                    ]"
                   >
                     الاعتمادات والثقة
-                  </nuxt-link>
-                </li>
-                <li
-                  :class="[
-                    { active: adjustedPath === '/gallery' },
-                    'text-white hover:text-PrimaryPL3',
-                  ]"
+                  </li>
+                </nuxt-link>
+                <nuxt-link
+                  :to="localePath('gallery')"
+                  @click="isSideBar = !isSideBar"
+                  class="w-full"
                 >
-                  <nuxt-link
-                    :to="localePath('gallery')"
-                    @click="isSideBar = !isSideBar"
-                    class="w-full"
+                  <li
+                    :class="[
+                      { active: adjustedPath === '/gallery' },
+                      'text-white hover:text-PrimaryPL3',
+                    ]"
                   >
                     المعرض
-                  </nuxt-link>
-                </li>
+                  </li>
+                </nuxt-link>
               </ul>
             </nav>
             <div class="mt-5 justify-between flex-col px-6">
