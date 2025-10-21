@@ -37,11 +37,12 @@ export default defineNuxtConfig({
           href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css",
         },
       ],
-      title: "Tech Ozone",
+      title: "الشركة السعودية للأوزون",
       meta: [
         {
           name: "description",
-          content: "",
+          content:
+            "نحن الشركة السعودية الأولى والرائدة في مجال التعقيم والتطهير بتقنية الأوزون، بخبرة تمتد منذ عام 2011 في تقديم حلول مبتكرة وصديقة للبيئة.",
         },
       ],
     },
