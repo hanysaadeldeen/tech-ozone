@@ -6,7 +6,8 @@
     <div class="max-w-[1208px] mx-auto">
       <CoresSection />
       <SectorsSection />
-      <DevicesSection />
+      <!-- <DevicesSection /> -->
+      <SuccessPartenerClients />
     </div>
     <WhyUsSection />
     <div class="max-w-[1208px] mx-auto">
@@ -16,6 +17,4 @@
   </main>
 </template>
 
-
-<script setup>
-</script>
+<script setup></script>

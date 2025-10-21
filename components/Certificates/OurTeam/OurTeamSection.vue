@@ -91,12 +91,12 @@ const OurTeam = [
     img: ahmedAlMalki,
     imgAlt: "صورة أحمد المالكي",
   },
-  {
-    title: "د/ابراهيم عبدالله",
-    description: "إخصائي سلامة وصحة مهنية",
-    img: ibrahimAbdullah,
-    imgAlt: "صورة د/ابراهيم عبدالله",
-  },
+  // {
+  //   title: "د/ابراهيم عبدالله",
+  //   description: "إخصائي سلامة وصحة مهنية",
+  //   img: ibrahimAbdullah,
+  //   imgAlt: "صورة د/ابراهيم عبدالله",
+  // },
   {
     title: "روان المديفع",
     description: "إخصائي الجودة والسلامة",
