@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </SwiperSlide>
-                =
+
             </Swiper>
         </div>
     </div>
