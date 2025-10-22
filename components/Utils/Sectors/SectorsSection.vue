@@ -1,5 +1,8 @@
 <template>
-  <section class="SectorsSection max-md:px-6">
+  <section
+    class="SectorsSection max-md:px-6"
+    :dir="locale === 'ar' ? 'rtl' : 'ltr'"
+  >
     <section-title
       btnText="القطاعات"
       description="نخدم قطاعات حساسة... بحلول أوزونية آمنة وفعالة"
@@ -22,6 +25,8 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n();
+
 import sectorimg from "../../../assets/img/sectorimg.svg";
 import chicken from "../../../assets/img/chicken.svg";
 import dates from "../../../assets/img/dates.svg";

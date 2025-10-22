@@ -1,5 +1,8 @@
 <template>
-  <section class="CoreSection max-2xl:px-6 relative">
+  <section
+    class="CoreSection max-2xl:px-6 relative"
+    :dir="locale === 'ar' ? 'rtl' : 'ltr'"
+  >
     <section-title
       btnText="طريقة الشركة السعودية للأوزون"
       description="خدمة متكاملة تبدأ بالتوريد وتنتهي بالدعم الفني"
@@ -48,6 +51,8 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n();
+
 const CorCards = [
   {
     id: 1,

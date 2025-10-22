@@ -1,8 +1,9 @@
+<!-- :data-speed="50000" -->
+
 <template>
   <div class="carousel relative">
     <div
       class="swiper tinyflow-slider relative bg-[#F5F7FA]"
-      :data-speed="1000"
       :data-autoplay-delay="8000"
     >
       <div
@@ -26,7 +27,6 @@
         </button>
       </div>
 
-      <!-- Swiper -->
       <Swiper
         :modules="modules"
         :slides-per-view="1"
@@ -149,7 +149,7 @@ const prevEl = ref<HTMLElement | null>(null);
 
 // Dynamic props (from dataset or fixed values)
 const speed = 1000;
-const autoplayDelay = 3000;
+const autoplayDelay = 5000;
 </script>
 <style scoped>
 :root {

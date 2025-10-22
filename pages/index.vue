@@ -1,12 +1,9 @@
 <template>
-  <main class="MainPage overflow-hidden">
-    <!-- <HomeHeroSection /> -->
+  <main class="MainPage overflow-hidden" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     <HomeHereTwo />
-
     <div class="max-w-[1208px] mx-auto">
       <CoresSection />
       <SectorsSection />
-      <!-- <DevicesSection /> -->
       <SuccessPartenerClients />
     </div>
     <WhyUsSection />
@@ -15,6 +12,7 @@
       <ClientsSection />
     </div>
   </main>
+  <PhotoSection />
 </template>
 
 <script setup></script>

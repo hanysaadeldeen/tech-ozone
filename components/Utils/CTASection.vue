@@ -1,6 +1,7 @@
 <template>
   <section
     class="CTASection max-2xl:px-6 py-[120px] bg-[linear-gradient(to_right,#43236A_0%,#10278C_20%,#10278C_80%,#43236A_100%)]"
+    :dir="locale === 'ar' ? 'rtl' : 'ltr'"
   >
     <div class="max-w-[1208px] mx-auto">
       <div
@@ -74,6 +75,8 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n();
+
 import telephone from "../../assets/img/Utils/telephone.svg";
 import mail from "../../assets/img/Utils/mail.svg";
 import whatsapp from "../../assets/img/Utils/whatsapp.svg";

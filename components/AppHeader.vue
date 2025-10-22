@@ -1,6 +1,7 @@
 <template>
   <header
     class="relative z-20 max-2xl:px-6 py-4 md:py-6 text-primary border-b border-[#FFFFFF1F] bg-white"
+    :dir="locale === 'ar' ? 'rtl' : 'ltr'"
   >
     <div class="mx-auto max-w-[1208px]">
       <div class="relative">
@@ -22,16 +23,18 @@
                 <nuxt-link :to="localePath('index')">
                   <li :class="{ active: adjustedPath === '/' }">الرئيسية</li>
                 </nuxt-link>
+
+                <nuxt-link :to="localePath('about-us')">
+                  <li :class="{ active: adjustedPath === '/about-us' }">
+                    من نحن
+                  </li>
+                </nuxt-link>
                 <nuxt-link :to="localePath('sectors')">
                   <li :class="{ active: adjustedPath.includes('/sectors') }">
                     القطاعات
                   </li>
                 </nuxt-link>
-                <nuxt-link :to="localePath('about-us')">
-                  <li :class="{ active: adjustedPath === '/about-us' }">
-                    عن الشركة السعودية للأوزون
-                  </li>
-                </nuxt-link>
+
                 <nuxt-link :to="localePath('certificates-trust')">
                   <li
                     :class="{ active: adjustedPath === '/certificates-trust' }"
@@ -108,7 +111,7 @@
                       'text-white hover:text-PrimaryPL3',
                     ]"
                   >
-                    عن الشركة السعودية للأوزون
+                    من نحن
                   </li>
                 </nuxt-link>
                 <nuxt-link

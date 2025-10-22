@@ -1,5 +1,5 @@
 <template>
-  <main class="gallery">
+  <main class="gallery" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     <GalleryHeroSection />
     <div class="max-w-[1208px] mx-auto">
       <div
@@ -15,64 +15,22 @@
             :class="FaqsFilter === 'photography' && 'active'"
             @click="FaqsFilter = 'photography'"
           >
-            كل القطاعات
+            بعض انجازاتنــا
           </SwiperSlide>
           <SwiperSlide
-            :class="FaqsFilter === 'vidoeFilter' && 'active'"
-            @click="FaqsFilter = 'vidoeFilter'"
+            :class="FaqsFilter === 'photography' && 'active'"
+            @click="FaqsFilter = 'photography'"
           >
-            الحج والعمرة
-          </SwiperSlide>
-          <SwiperSlide
-            :class="FaqsFilter === 'branding' && 'active'"
-            @click="FaqsFilter = 'branding'"
-          >
-            الصحة
-          </SwiperSlide>
-          <SwiperSlide
-            :class="FaqsFilter === 'webDesign' && 'active'"
-            @click="FaqsFilter = 'webDesign'"
-          >
-            الدواجن
-          </SwiperSlide>
-          <SwiperSlide
-            :class="FaqsFilter === 'socialMedia' && 'active'"
-            @click="FaqsFilter = 'socialMedia'"
-          >
-            الزراعة
-          </SwiperSlide>
-          <SwiperSlide
-            :class="FaqsFilter === 'support' && 'active'"
-            @click="FaqsFilter = 'support'"
-          >
-            التمور
-          </SwiperSlide>
-          <SwiperSlide
-            :class="FaqsFilter === 'support' && 'active'"
-            @click="FaqsFilter = 'support'"
-          >
-            الفنادق والسياحة
+            بعض اعملانا
           </SwiperSlide>
         </Swiper>
       </div>
-      <section class="GalleryProjects max-2xl:px-6">
+      <div class="GalleryProjects mt-[48px] max-2xl:px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           <div
             class="boxShadow rounded-3xl group overflow-hidden cursor-pointer relative"
             v-for="img in visibleItems"
           >
-            <!-- <div class="absolute bottom-8 right-10 z-20">
-              <h1 class="text-2xl font-medium text-white mb-2">
-                تطهير الكعبة المشرفة بالكامل
-              </h1>
-              <div
-                class="text-TextL text-base font-normal flex items-center gap-2"
-              >
-                <span>مكة المكرمة</span>
-                <span>.</span>
-                <span>2020م</span>
-              </div>
-            </div> -->
             <img
               :src="img.src"
               alt="gallery"
@@ -84,7 +42,7 @@
             />
           </div>
         </div>
-      </section>
+      </div>
     </div>
   </main>
   <div
@@ -115,6 +73,8 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper/modules";
+const { locale } = useI18n();
+
 import "swiper/css";
 import "swiper/css/pagination";
 const modules = [Pagination];

@@ -1,12 +1,12 @@
 <template>
-  <main class="faqs">
+  <main class="faqs" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     <GredientHero
       title="كل ما تحتاج معرفته عن حلول وتقنيات الأوزون"
       description="هنا ستجد إجابات وافية عن أبرز الأسئلة المتعلقة بتقنياتنا، أجهزتنا، وخدماتنا، لتتخذ قرارك بثقة واطمئنان."
     />
 
     <div class="max-w-[1208px] mx-auto">
-      <div
+      <!-- <div
         class="flex mt-[60px] md:mt-[120px] py-8 md:py-12 border-b border-t border-[#E5E9F5]"
       >
         <Swiper
@@ -52,7 +52,7 @@
             الدعم الفني والصيانة
           </SwiperSlide>
         </Swiper>
-      </div>
+      </div> -->
       <div class="mt-[60px] md:mt-[120px]">
         <FAQ
           v-for="(faq, index) in FAQs"
@@ -83,6 +83,8 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper/modules";
+const { locale } = useI18n();
+
 import "swiper/css";
 import "swiper/css/pagination";
 const modules = [Pagination];

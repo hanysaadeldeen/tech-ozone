@@ -1,5 +1,8 @@
 <template>
-  <section class="StatisticsSection max-2xl:px-6">
+  <section
+    class="StatisticsSection max-2xl:px-6"
+    :dir="locale === 'ar' ? 'rtl' : 'ltr'"
+  >
     <div class="max-w-[912px] mx-auto">
       <section-title
         btnText="الإحصائيات"
@@ -60,6 +63,8 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { locale } = useI18n();
+</script>
 
 <style scoped></style>

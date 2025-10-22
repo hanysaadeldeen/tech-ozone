@@ -1,5 +1,5 @@
 <template>
-  <main class="contactPage max-xl:px-6">
+  <main class="contactPage max-xl:px-6" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     <GredientHero
       title="تواصل معنا بكل سهولة"
       description="نحن في الشركة السعودية للأوزون جاهزون للرد على استفساراتك وتقديم الدعم لاحتياجاتك. تواصل معنا عبر النموذج أو وسائل الاتصال المتاحة، وسنكون سعداء بخدمتك."

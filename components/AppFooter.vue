@@ -1,5 +1,8 @@
 <template>
-  <footer class="relative bg-BG w-full pt-14 pb-10 md:pt-20">
+  <footer
+    class="relative bg-BG w-full pt-14 pb-10 md:pt-20"
+    :dir="locale === 'ar' ? 'rtl' : 'ltr'"
+  >
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between gap-6 md:gap-10 lg:gap-20 max-w-[1208px] mx-auto pb-10 md:pb-14 max-2xl:px-6 relative border-b border-TextL"
     >
@@ -16,15 +19,17 @@
             loading="lazy"
           />
         </nuxt-link>
-        <p class="my-4 font-medium text-xl text-[#EF1F26]">
-          علامة تجارية سعودية
-        </p>
-        <p
-          class="mt-4 font-medium text-base text-TextD mb-8 max-w-[272px] w-full"
-        >
+        <p class="my-2 font-medium text-base text-TextD max-w-[272px] w-full">
           أول شركة سعودية متخصصة في حلول التطهير والتعقيم بتقنية الأوزون، نخدم
           القطاعات الحيوية منذ عام 2011.
         </p>
+        <img
+          src="~/assets/img/Utils/BLogo.svg"
+          class="w-fit h-20 relative block"
+          alt="techOzone"
+          width="186"
+          loading="lazy"
+        />
       </div>
       <div class="max-w-[200px] md:mx-auto">
         <h1 class="text-TextD text-base font-medium mb-6">
