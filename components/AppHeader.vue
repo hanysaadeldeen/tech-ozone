@@ -8,9 +8,9 @@
           <nuxt-link :to="localePath('/')" class="block relative z-40">
             <img
               src="~/assets/img/Utils/Logo.svg"
-              class="max-w-fit xl:h-[60px] relative block"
+              class="max-w-fit xl:h-[68px] relative block"
               alt="techOzone"
-              height="60"
+              height="68"
               width="186"
               loading="eager"
               fetchpriority="high"

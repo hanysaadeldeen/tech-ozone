@@ -16,6 +16,9 @@
             loading="lazy"
           />
         </nuxt-link>
+        <p class="my-4 font-medium text-xl text-[#EF1F26]">
+          علامة تجارية سعودية
+        </p>
         <p
           class="mt-4 font-medium text-base text-TextD mb-8 max-w-[272px] w-full"
         >
@@ -79,20 +82,27 @@
         </h1>
         <nav>
           <ul>
-            <li class="pt-0 flex items-center gap-4 group">
-              <i
-                class="fa-solid fa-phone text-TextM group-hover:text-Secondary transition-all ease-in-out duration-300"
-              ></i>
-              <span :dir="locale === 'ar' ? 'ltr' : ''">
-                +966 50 123 4567
-              </span>
-            </li>
-            <li class="flex items-center gap-4 group">
-              <i
-                class="fa-solid fa-envelope text-TextM group-hover:text-Secondary transition-all ease-in-out duration-300"
-              ></i>
-              <span> info@techozone.sa </span>
-            </li>
+            <a href="tel:+966540061616" target="_blank">
+              <li class="pt-0 flex items-center gap-4 group">
+                <i
+                  class="fa-solid fa-phone text-TextM group-hover:text-Secondary transition-all ease-in-out duration-300"
+                ></i>
+                <span :dir="locale === 'ar' ? 'ltr' : ''">
+                  +966 54 006 1616
+                </span>
+              </li>
+            </a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&to=info@saudiozone.com.sa"
+              target="_blank"
+            >
+              <li class="flex items-center gap-4 group">
+                <i
+                  class="fa-solid fa-envelope text-TextM group-hover:text-Secondary transition-all ease-in-out duration-300"
+                ></i>
+                <span> info@saudiozone.com.sa </span>
+              </li>
+            </a>
             <li class="pb-0 flex items-center gap-4 group border-none">
               <a
                 href="https://maps.app.goo.gl/R1doJaXcoE49Xfrr7"
@@ -113,8 +123,8 @@
       </div>
     </div>
     <h1 class="px-4 text-center text-sm font-normal text-TextMD pt-6">
-      حقوق النشر © ٢٠٢٥ شركة الشركة السعودية للأوزون. جميع الحقوق محفوظة. | من
-      تصميم وتطوير
+      حقوق النشر © ٢٠٢٥ الشركة السعودية للأوزون للمشاريع والحلول
+      البيئية والصحية. جميع الحقوق محفوظة. | من تصميم وتطوير
       <a
         href="https://do.com.sa/"
         target="_blank"

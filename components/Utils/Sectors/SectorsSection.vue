@@ -28,6 +28,8 @@ import dates from "../../../assets/img/dates.svg";
 import hotel from "../../../assets/img/hotel.svg";
 import medical from "../../../assets/img/medical.svg";
 import plant from "../../../assets/img/plant.svg";
+import factory from "../../../assets/img/factory.svg";
+import darty from "../../../assets/img/darty.svg";
 
 const CorCards = [
   {
@@ -65,6 +67,18 @@ const CorCards = [
     img: hotel,
     title: "قطاع الفنادق والسياحة",
     description: "تعقيم الفنادق والمرافق السياحية.",
+  },
+  {
+    id: 6,
+    img: darty,
+    title: "قطاع المياه والصرف الصحي ",
+    description: "تعقيم التربة والمياه الزراعية",
+  },
+  {
+    id: 6,
+    img: factory,
+    title: "القطاع الصناعي",
+    description: "تعقيم الاجهزة والمعدات",
   },
 ];
 </script>

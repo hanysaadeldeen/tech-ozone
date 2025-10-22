@@ -37,7 +37,7 @@ export default defineNuxtConfig({
           href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css",
         },
       ],
-      title: "الشركة السعودية للأوزون",
+      title: "الشركة السعودية للأوزون :: للمشاريع والحلول البيئي والصحية",
       meta: [
         {
           name: "description",

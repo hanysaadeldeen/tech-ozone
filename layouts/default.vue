@@ -4,6 +4,7 @@
     <slot />
     <CTASection />
     <AppFooter />
+    <WhatsUpScroll />
   </div>
 </template>
 

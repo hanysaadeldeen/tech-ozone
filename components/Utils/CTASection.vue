@@ -44,15 +44,15 @@
               {{ contact.description }}
             </p>
           </div>
-          <!-- <a :href="contact.link" target="_blank"> -->
-          <button
-            class="boxShadow2 block rounded-full text-lg font-medium py-2.5 px-12 w-full"
-            :class="contact.id === 2 ? 'text-white' : ' text-Secondary'"
-            :style="{ backgroundColor: contact.background }"
-          >
-            {{ contact.btnText }}
-          </button>
-          <!-- </nuxt-link> -->
+          <a :href="contact.link" target="_blank">
+            <button
+              class="boxShadow2 block rounded-full text-lg font-medium py-2.5 px-12 w-full"
+              :class="contact.id === 2 ? 'text-white' : ' text-Secondary'"
+              :style="{ backgroundColor: contact.background }"
+            >
+              {{ contact.btnText }}
+            </button>
+          </a>
         </div>
       </div>
 
@@ -76,6 +76,7 @@
 <script setup lang="ts">
 import telephone from "../../assets/img/Utils/telephone.svg";
 import mail from "../../assets/img/Utils/mail.svg";
+import whatsapp from "../../assets/img/Utils/whatsapp.svg";
 const Contacts = [
   {
     id: 1,
@@ -84,7 +85,7 @@ const Contacts = [
     description: "استفساراتك تُجاب فورًا عبر الاتصال المباشر.",
     img: telephone,
     background: "#FFFFFF",
-    link: "",
+    link: "tel:+966540061616",
   },
   {
     id: 2,
@@ -93,16 +94,16 @@ const Contacts = [
     description: "عرض مفصل يلبي احتياجات مشروعك بدقة",
     img: mail,
     background: "#ED2024",
-    link: "",
+    link: "https://mail.google.com/mail/?view=cm&to=info@saudiozone.com.sa",
   },
   {
     id: 3,
-    title: "احجز مكالمة",
+    title: "راسلنا علي الواتس اب",
     btnText: "احجز الآن",
     description: "تواصل سريع مع خبرائنا لمناقشة متطلباتك",
-    img: telephone,
+    img: whatsapp,
     background: "#FFFFFF",
-    link: "",
+    link: "http://wa.me/+966540061616",
   },
 ];
 
