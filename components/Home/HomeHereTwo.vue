@@ -1,12 +1,13 @@
 <!-- :data-speed="50000" -->
 
 <template>
-  <div class="carousel relative">
+  <div class="carousel relative overflow-hidden h-[calc(100vh-117px)]">
     <div
       class="swiper tinyflow-slider relative bg-[#F5F7FA]"
       :data-autoplay-delay="8000"
     >
       <div
+        :dir="locale === 'ar' ? 'rtl' : 'ltr'"
         class="flex justify-center items-center gap-6 absolute bottom-[15%] right-0 w-full text-center z-10"
       >
         <button
@@ -49,7 +50,7 @@
         <SwiperSlide v-for="(slide, i) in slides" :key="'thumb-' + i">
           <div class="tinyflow-slide">
             <img
-              class="tinyflow-slide__background__element brightness-50"
+              class="tinyflow-slide__background__element"
               :src="slide.img"
               :alt="slide.title"
               draggable="false"
@@ -84,6 +85,8 @@ import { ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Autoplay, Keyboard, EffectFade } from "swiper/modules";
 
+const { locale } = useI18n();
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
@@ -97,49 +100,60 @@ import desert from "../../assets/img/Projects/desert.webp";
 import mosq from "../../assets/img/Projects/mosq.webp";
 import hospitalProject from "../../assets/img/Projects/hospitalProject.webp";
 import tamr from "../../assets/img/Projects/tamr.webp";
-import ozone from "../../assets/img/Projects/ozone.webp";
+// import ozone from "../../assets/img/Projects/ozone.webp";
+// import ozone from "../../assets/img/Projects/aya.svg";
+// import ozone from "../../assets/img/Projects/kayba.jpg";
+// import ozone from "../../assets/img/Projects/hani.svg";
+import ozone from "../../assets/img/Projects/hani2.png";
 
+// const slides = [
+//   {
+//     img: ozone,
+//     title: "",
+//     description: "",
+//   },
+//   {
+//     img: apple,
+//     title: "قطاع الزراعة",
+//     description:
+//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
+//   },
+//   {
+//     img: checken,
+//     title: "قطاع الدواجن",
+//     description:
+//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
+//   },
+//   {
+//     img: desert,
+//     title: "قطاع الفنادق والسياحة ",
+//     description:
+//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
+//   },
+//   {
+//     img: mosq,
+//     title: "قطاع الحج والعمرة",
+//     description:
+//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
+//   },
+//   {
+//     img: hospitalProject,
+//     title: "القطاع الصحي",
+//     description:
+//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
+//   },
+//   {
+//     img: tamr,
+//     title: "قطاع التمور",
+//     description:
+//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
+//   },
+// ];
 const slides = [
   {
     img: ozone,
     title: "",
     description: "",
-  },
-  {
-    img: apple,
-    title: "قطاع الزراعة",
-    description:
-      "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-  },
-  {
-    img: checken,
-    title: "قطاع الدواجن",
-    description:
-      "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-  },
-  {
-    img: desert,
-    title: "قطاع الفنادق والسياحة ",
-    description:
-      "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-  },
-  {
-    img: mosq,
-    title: "قطاع الحج والعمرة",
-    description:
-      "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-  },
-  {
-    img: hospitalProject,
-    title: "القطاع الصحي",
-    description:
-      "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-  },
-  {
-    img: tamr,
-    title: "قطاع التمور",
-    description:
-      "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
   },
 ];
 
@@ -159,8 +173,8 @@ const autoplayDelay = 5000;
 }
 
 .carousel {
-  height: 100vh;
-  margin-top: -112px;
+  /* height: 100vh; */
+
   width: 100vw;
   overflow: hidden;
   position: relative;
@@ -191,9 +205,9 @@ const autoplayDelay = 5000;
   transform: scale(1.05);
   /*  
 
+  */
   -o-object-fit: cover;
   object-fit: cover;
-  */
   -webkit-transition: -webkit-transform calc(var(--data-speed, 300) * 1ms)
     linear calc(var(--data-speed, 300) * 1ms);
   transition: -webkit-transform calc(var(--data-speed, 300) * 1ms) linear

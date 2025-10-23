@@ -45,9 +45,7 @@
             <li :class="{ active: adjustedPath.includes('/sectors') }">
               <nuxt-link :to="localePath('/sectors')"> القطاعات </nuxt-link>
             </li>
-            <li :class="{ active: adjustedPath === '/products' }">
-              <nuxt-link :to="localePath('/products')"> الأجهزة </nuxt-link>
-            </li>
+
             <li :class="{ active: adjustedPath === '/certificates-trust' }">
               <nuxt-link :to="localePath('/certificates-trust')">
                 الاعتمادات والثقة
