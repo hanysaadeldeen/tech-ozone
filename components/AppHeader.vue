@@ -158,7 +158,7 @@
                 </nuxt-link>
               </ul>
             </nav>
-            <div class="mt-5 justify-between flex-col px-6">
+            <div class="mt-5 justify-between flex-col">
               <LanguageSwitcher isWhite />
               <nuxt-link :to="localePath('contact-us')" class="block mt-5">
                 <Button title="تواصل معنا" background="#092892" />

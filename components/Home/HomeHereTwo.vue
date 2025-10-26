@@ -1,7 +1,9 @@
 <!-- :data-speed="50000" -->
 
 <template>
-  <div class="carousel relative overflow-hidden h-[calc(100vh-117px)]">
+  <div
+    class="carousel relative overflow-hidden h-[calc(100dvh-105px)] md:h-[calc(100dvh-117px)]"
+  >
     <div
       class="swiper tinyflow-slider relative bg-[#F5F7FA]"
       :data-autoplay-delay="8000"
@@ -100,23 +102,27 @@ import desert from "../../assets/img/Projects/desert.webp";
 import mosq from "../../assets/img/Projects/mosq.webp";
 import hospitalProject from "../../assets/img/Projects/hospitalProject.webp";
 import tamr from "../../assets/img/Projects/tamr.webp";
-// import ozone from "../../assets/img/Projects/ozone.webp";
-// import ozone from "../../assets/img/Projects/aya.svg";
-// import ozone from "../../assets/img/Projects/kayba.jpg";
-// import ozone from "../../assets/img/Projects/hani.svg";
-import ozone from "../../assets/img/Projects/hani2.png";
+import ksa from "../../assets/img/Projects/ksa.webp";
+import factory from "../../assets/img/Projects/factory.webp";
+// import ozone from "../../assets/img/Projects/aya.png";
 
 // const slides = [
 //   {
-//     img: ozone,
+//     img: ksa,
 //     title: "",
 //     description: "",
 //   },
+
 //   {
 //     img: apple,
 //     title: "قطاع الزراعة",
 //     description:
 //       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
+//   },
+//   {
+//     img: factory,
+//     title: "",
+//     description: "",
 //   },
 //   {
 //     img: checken,
@@ -151,7 +157,12 @@ import ozone from "../../assets/img/Projects/hani2.png";
 // ];
 const slides = [
   {
-    img: ozone,
+    img: ksa,
+    title: "",
+    description: "",
+  },
+  {
+    img: factory,
     title: "",
     description: "",
   },
