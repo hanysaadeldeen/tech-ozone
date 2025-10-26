@@ -10,7 +10,7 @@
     >
       <div
         :dir="locale === 'ar' ? 'rtl' : 'ltr'"
-        class="flex justify-center items-center gap-6 absolute bottom-[15%] right-0 w-full text-center z-10"
+        class="flex justify-center items-center gap-6 absolute bottom-[25%] md:bottom-[15%] right-0 w-full text-center z-10"
       >
         <button
           type="button"
