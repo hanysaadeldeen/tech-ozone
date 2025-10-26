@@ -104,7 +104,7 @@ import hospitalProject from "../../assets/img/Projects/hospitalProject.webp";
 import tamr from "../../assets/img/Projects/tamr.webp";
 import ksa from "../../assets/img/Projects/ksa.webp";
 import factory from "../../assets/img/Projects/factory.webp";
-import ozone from "../../assets/img/Projects/aya.png";
+import ozone from "../../assets/img/Projects/aya4.jpg";
 
 // const slides = [
 //   {
@@ -156,21 +156,21 @@ import ozone from "../../assets/img/Projects/aya.png";
 //   },
 // ];
 const slides = [
-  {
-    img: ksa,
-    title: "",
-    description: "",
-  },
+  // {
+  //   img: ksa,
+  //   title: "",
+  //   description: "",
+  // },
   {
     img: ozone,
     title: "",
     description: "",
   },
-  {
-    img: factory,
-    title: "",
-    description: "",
-  },
+  // {
+  //   img: factory,
+  //   title: "",
+  //   description: "",
+  // },
 ];
 
 // Refs for navigation
