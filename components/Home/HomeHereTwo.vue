@@ -6,7 +6,7 @@
   >
     <div
       class="swiper tinyflow-slider relative bg-[#F5F7FA]"
-      :data-autoplay-delay="8000"
+      :data-autoplay-delay="9000"
     >
       <div
         :dir="locale === 'ar' ? 'rtl' : 'ltr'"
@@ -156,21 +156,22 @@ import ozone from "../../assets/img/Projects/aya4.jpg";
 //   },
 // ];
 const slides = [
-  // {
-  //   img: ksa,
-  //   title: "",
-  //   description: "",
-  // },
   {
     img: ozone,
     title: "",
     description: "",
   },
-  // {
-  //   img: factory,
-  //   title: "",
-  //   description: "",
-  // },
+  {
+    img: ksa,
+    title: "",
+    description: "",
+  },
+
+  {
+    img: factory,
+    title: "",
+    description: "",
+  },
 ];
 
 // Refs for navigation
@@ -179,7 +180,7 @@ const prevEl = ref<HTMLElement | null>(null);
 
 // Dynamic props (from dataset or fixed values)
 const speed = 1000;
-const autoplayDelay = 5000;
+const autoplayDelay = 7000;
 </script>
 <style scoped>
 :root {
