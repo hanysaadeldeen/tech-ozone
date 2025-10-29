@@ -106,6 +106,11 @@ import ksa from "../../assets/img/Projects/ksa.webp";
 import factory from "../../assets/img/Projects/factory.webp";
 import ozone from "../../assets/img/Projects/aya4.jpg";
 
+import maka from "../../assets/img/Projects/maka.webp";
+import agricaleture from "../../assets/img/Projects/agricaleture.webp";
+import building from "../../assets/img/Projects/building.webp";
+import healthy from "../../assets/img/Projects/healthy.webp";
+
 // const slides = [
 //   {
 //     img: ksa,
@@ -166,9 +171,28 @@ const slides = [
     title: "",
     description: "",
   },
-
   {
     img: factory,
+    title: "",
+    description: "",
+  },
+  {
+    img: maka,
+    title: "",
+    description: "",
+  },
+  {
+    img: agricaleture,
+    title: "",
+    description: "",
+  },
+  {
+    img: building,
+    title: "",
+    description: "",
+  },
+  {
+    img: healthy,
     title: "",
     description: "",
   },
