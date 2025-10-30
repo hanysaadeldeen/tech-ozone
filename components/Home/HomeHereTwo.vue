@@ -96,24 +96,11 @@ import "swiper/css/effect-fade";
 
 const modules = [Navigation, Autoplay, Keyboard, EffectFade];
 
-import apple from "../../assets/img/Projects/apple.webp";
-import checken from "../../assets/img/Projects/checken.webp";
-import desert from "../../assets/img/Projects/desert.webp";
-import mosq from "../../assets/img/Projects/mosq.webp";
-import hospitalProject from "../../assets/img/Projects/hospitalProject.webp";
-// import tamr from "../../assets/img/Projects/tamr.webp";
-// import ksa from "../../assets/img/Projects/ksa.webp";
-import factory from "../../assets/img/Projects/factory.webp";
 import ozone from "../../assets/img/Projects/aya4.jpg";
 import chicken from "../../assets/img/Projects/chicken.jpg";
 import hotel from "../../assets/img/Projects/hotel.jpg";
 import tamr from "../../assets/img/Projects/tamr.jpg";
 import water from "../../assets/img/Projects/water.jpg";
-
-import maka from "../../assets/img/Projects/maka.webp";
-import agricaleture from "../../assets/img/Projects/agricaleture.webp";
-import building from "../../assets/img/Projects/building.webp";
-import healthy from "../../assets/img/Projects/healthy.webp";
 
 const slides = [
   {
@@ -141,31 +128,6 @@ const slides = [
     title: "",
     description: "",
   },
-  // {
-  //   img: factory,
-  //   title: "",
-  //   description: "",
-  // },
-  // {
-  //   img: maka,
-  //   title: "",
-  //   description: "",
-  // },
-  // {
-  //   img: agricaleture,
-  //   title: "",
-  //   description: "",
-  // },
-  // {
-  //   img: building,
-  //   title: "",
-  //   description: "",
-  // },
-  // {
-  //   img: healthy,
-  //   title: "",
-  //   description: "",
-  // },
 ];
 
 // Refs for navigation

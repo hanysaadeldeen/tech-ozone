@@ -19,17 +19,19 @@
             loading="lazy"
           />
         </nuxt-link>
-        <p class="my-2 font-medium text-base text-TextD max-w-[272px] w-full">
-          أول شركة سعودية متخصصة في حلول التطهير والتعقيم بتقنية الأوزون، نخدم
-          القطاعات الحيوية منذ عام 2011.
-        </p>
-        <img
-          src="~/assets/img/Utils/BLogo.svg"
-          class="w-fit h-20 relative block"
-          alt="techOzone"
-          width="186"
-          loading="lazy"
-        />
+        <div class="max-w-[230px] w-full">
+          <p class="my-2 font-medium text-base text-TextD">
+            أول شركة سعودية متخصصة في حلول التطهير والتعقيم بتقنية الأوزون، نخدم
+            القطاعات الحيوية منذ عام 2011.
+          </p>
+          <img
+            src="~/assets/img/Utils/BLogo.svg"
+            class="w-full h-20 relative block object-cover"
+            alt="techOzone"
+            width="186"
+            loading="lazy"
+          />
+        </div>
       </div>
       <div class="max-w-[200px] md:mx-auto">
         <h1 class="text-TextD text-base font-medium mb-6">

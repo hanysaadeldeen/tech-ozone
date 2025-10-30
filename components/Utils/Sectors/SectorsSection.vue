@@ -5,7 +5,7 @@
   >
     <section-title
       btnText="القطاعات"
-      description="نخدم قطاعات حساسة... بحلول أوزونية آمنة وفعالة"
+      description="نقود ثورة التعقيم بتقنية تك اوزون من قلب المملكة الى جميع قطاعاتها"
     />
     <div class="mb-20 relative">
       <div class="flex justify-center gap-6 md:gap-10 flex-wrap">
@@ -20,7 +20,7 @@
         </SectorCard>
       </div>
     </div>
-    <Button title="استعرض كل القطاعات" background="#092892" link="/sectors" />
+    <!-- <Button title="استعرض كل القطاعات" background="#092892" link="/sectors" /> -->
   </section>
 </template>
 
