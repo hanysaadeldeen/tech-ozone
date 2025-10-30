@@ -5,12 +5,12 @@
     class="carousel relative overflow-hidden h-[calc(100dvh-105px)] md:h-[calc(100dvh-117px)]"
   >
     <div
-      class="swiper tinyflow-slider relative bg-[#F5F7FA]"
+      class="swiper tinyflow-slider relative bg-[#F5F7FA] max-h-full"
       :data-autoplay-delay="9000"
     >
       <div
         :dir="locale === 'ar' ? 'rtl' : 'ltr'"
-        class="flex justify-center items-center gap-6 absolute bottom-[25%] md:bottom-[15%] right-0 w-full text-center z-10"
+        class="flex justify-center items-center gap-6 absolute bottom-[10%] right-0 w-full text-center z-10"
       >
         <button
           type="button"
@@ -101,65 +101,20 @@ import checken from "../../assets/img/Projects/checken.webp";
 import desert from "../../assets/img/Projects/desert.webp";
 import mosq from "../../assets/img/Projects/mosq.webp";
 import hospitalProject from "../../assets/img/Projects/hospitalProject.webp";
-import tamr from "../../assets/img/Projects/tamr.webp";
-import ksa from "../../assets/img/Projects/ksa.webp";
+// import tamr from "../../assets/img/Projects/tamr.webp";
+// import ksa from "../../assets/img/Projects/ksa.webp";
 import factory from "../../assets/img/Projects/factory.webp";
 import ozone from "../../assets/img/Projects/aya4.jpg";
+import chicken from "../../assets/img/Projects/chicken.jpg";
+import hotel from "../../assets/img/Projects/hotel.jpg";
+import tamr from "../../assets/img/Projects/tamr.jpg";
+import water from "../../assets/img/Projects/water.jpg";
 
 import maka from "../../assets/img/Projects/maka.webp";
 import agricaleture from "../../assets/img/Projects/agricaleture.webp";
 import building from "../../assets/img/Projects/building.webp";
 import healthy from "../../assets/img/Projects/healthy.webp";
 
-// const slides = [
-//   {
-//     img: ksa,
-//     title: "",
-//     description: "",
-//   },
-
-//   {
-//     img: apple,
-//     title: "قطاع الزراعة",
-//     description:
-//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-//   },
-//   {
-//     img: factory,
-//     title: "",
-//     description: "",
-//   },
-//   {
-//     img: checken,
-//     title: "قطاع الدواجن",
-//     description:
-//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-//   },
-//   {
-//     img: desert,
-//     title: "قطاع الفنادق والسياحة ",
-//     description:
-//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-//   },
-//   {
-//     img: mosq,
-//     title: "قطاع الحج والعمرة",
-//     description:
-//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-//   },
-//   {
-//     img: hospitalProject,
-//     title: "القطاع الصحي",
-//     description:
-//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-//   },
-//   {
-//     img: tamr,
-//     title: "قطاع التمور",
-//     description:
-//       "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي.",
-//   },
-// ];
 const slides = [
   {
     img: ozone,
@@ -167,35 +122,50 @@ const slides = [
     description: "",
   },
   {
-    img: ksa,
+    img: water,
     title: "",
     description: "",
   },
   {
-    img: factory,
+    img: tamr,
     title: "",
     description: "",
   },
   {
-    img: maka,
+    img: hotel,
     title: "",
     description: "",
   },
   {
-    img: agricaleture,
+    img: chicken,
     title: "",
     description: "",
   },
-  {
-    img: building,
-    title: "",
-    description: "",
-  },
-  {
-    img: healthy,
-    title: "",
-    description: "",
-  },
+  // {
+  //   img: factory,
+  //   title: "",
+  //   description: "",
+  // },
+  // {
+  //   img: maka,
+  //   title: "",
+  //   description: "",
+  // },
+  // {
+  //   img: agricaleture,
+  //   title: "",
+  //   description: "",
+  // },
+  // {
+  //   img: building,
+  //   title: "",
+  //   description: "",
+  // },
+  // {
+  //   img: healthy,
+  //   title: "",
+  //   description: "",
+  // },
 ];
 
 // Refs for navigation
