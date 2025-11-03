@@ -96,11 +96,11 @@ import "swiper/css/effect-fade";
 
 const modules = [Navigation, Autoplay, Keyboard, EffectFade];
 
-import ozone from "../../assets/img/Projects/aya4.jpg";
-import chicken from "../../assets/img/Projects/chicken.jpg";
-import hotel from "../../assets/img/Projects/hotel.jpg";
-import tamr from "../../assets/img/Projects/tamr.jpg";
-import water from "../../assets/img/Projects/water.jpg";
+import ozone from "../../assets/img/Projects/aya4.webp";
+import chicken from "../../assets/img/Projects/chicken.webp";
+import hotel from "../../assets/img/Projects/hotel.webp";
+import tamr from "../../assets/img/Projects/tamr.webp";
+import water from "../../assets/img/Projects/water.webp";
 
 const slides = [
   {

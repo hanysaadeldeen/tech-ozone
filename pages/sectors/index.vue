@@ -8,7 +8,8 @@
     <SectorsStatisticsSection />
     <div class="max-w-[1208px] mx-auto">
       <!-- <DevicesSection /> -->
-      <SuccessPartenerClients />
+      <!-- <SuccessPartenerClients /> -->
+      <LocalCertificatesSection />
     </div>
   </main>
 </template>

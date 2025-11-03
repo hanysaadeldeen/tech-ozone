@@ -5,7 +5,7 @@
       <InternationalCertificatesSection />
       <LocalCertificatesSection />
       <ScientificPartnershipsSection />
-      <SuccessPartenerClients />
+      <!-- <SuccessPartenerClients /> -->
       <OurTeamSection />
     </div>
   </main>

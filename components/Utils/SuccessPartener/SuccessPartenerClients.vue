@@ -48,54 +48,58 @@ import USDA from "../../../assets/img/Utils/clients/USDA.svg";
 import USDA_ORGANIC from "../../../assets/img/Utils/clients/USDAORGANIC.svg";
 import WORLD_HEALTH from "../../../assets/img/Utils/clients/WORLDHEALTH.svg";
 
-const Clients = [
-  { id: 1, title: "WORLD_HEALTH", img: WORLD_HEALTH },
-  { id: 2, title: "FDA", img: FDA },
-  { id: 3, title: "AIUIA", img: AIUIA },
-  { id: 4, title: "ALQASEM", img: ALQASEM },
-  { id: 5, title: "ALS", img: ALS },
+import menestryOfHealth from "~/assets/img/Utils/Partener/وزارة الصحة-٧٢.svg";
+import GrandMosque from "~/assets/img/Utils/Partener/الرئاسة العامة لشؤون المسجد الحرام-٤٧.svg";
+import IslamicAffairs from "~/assets/img/Utils/Partener/وزارة الشرون الاسلامية-٧١.svg";
+import MinistryofEnvironment from "~/assets/img/Utils/Partener/وزارة البيئة-٨٠.svg";
+import Facilities from "~/assets/img/Utils/Partener/منشأت-٤٤.svg";
+import KingAbdullahCity from "~/assets/img/Utils/Partener/مدينة المللك عبدالله-٥٠.svg";
 
-  // {
-  //   id: 12,
-  //   title: "GENERAL_AUTHORITY_OF_SURVEY",
-  //   img: GENERAL_AUTHORITY_OF_SURVEY,
-  // },
-  // {
-  //   id: 13,
-  //   title: "GENERAL_PRESIDENCY_FOR_THE_AFFAIRS_OF_THE_GRAND_MOSQUE",
-  //   img: GENERAL_PRESIDENCY_FOR_THE_AFFAIRS_OF_THE_GRAND_MOSQUE,
-  // },
-  { id: 14, title: "IOA", img: IOA },
-  { id: 15, title: "KING_ABDULLAH_CITY", img: KING_ABDULLAH_CITY },
-  { id: 16, title: "KING_SAUD_UNIVERSITY", img: KING_SAUD_UNIVERSITY },
-  {
-    id: 17,
-    title: "MINISTRY_OF_ENVIRONMENT_WATER_AND_AGRICULTURE",
-    img: MINISTRY_OF_ENVIRONMENT_WATER_AND_AGRICULTURE,
-  },
-  { id: 18, title: "MINISTRY_OF_HEALTH", img: MINISTRY_OF_HEALTH },
-  {
-    id: 19,
-    title: "MINISTRY_OF_ISLAMIC_AFFAIRS",
-    img: MINISTRY_OF_ISLAMIC_AFFAIRS,
-  },
-  { id: 20, title: "MONSHAAT_21", img: MONSHAAT_21 },
-  { id: 21, title: "NATIONAL_CENTER_FOR_WILD", img: NATIONAL_CENTER_FOR_WILD },
-  { id: 22, title: "NATION_CENTER_FOR_BALM", img: NATION_CENTER_FOR_BALM },
-  // { id: 23, title: "NR", img: NR },
-  { id: 24, title: "NUPCO", img: NUPCO },
-  {
-    id: 25,
-    title: "SAUDI_FOOD_AND_DRUG_AUTHORITY",
-    img: SAUDI_FOOD_AND_DRUG_AUTHORITY,
-  },
-  { id: 26, title: "SGS", img: SGS },
-  { id: 27, title: "TAIF_UNIVERSITY", img: TAIF_UNIVERSITY },
-  { id: 28, title: "TUV", img: TUV },
-  { id: 29, title: "UNITED_STATES", img: UNITED_STATES },
-  { id: 30, title: "USDA", img: USDA },
-  { id: 31, title: "USDA_ORGANIC", img: USDA_ORGANIC },
+const Clients = [
+  { id: 1, title: "وزارة الصحة", img: menestryOfHealth },
+  { id: 2, title: "الرئاسة العامة لشؤون المسجد الحرام", img: GrandMosque },
+  { id: 3, title: "وزارة الشرون الاسلامية", img: IslamicAffairs },
+  { id: 4, title: "وزارة البيئة", img: MinistryofEnvironment },
+  { id: 5, title: "منشأت", img: Facilities },
+  { id: 5, title: "مدينة المللك عبدالله", img: KingAbdullahCity },
 ];
+// const Clients = [
+//   { id: 1, title: "WORLD_HEALTH", img: WORLD_HEALTH },
+//   { id: 2, title: "FDA", img: FDA },
+//   { id: 3, title: "AIUIA", img: AIUIA },
+//   { id: 4, title: "ALQASEM", img: ALQASEM },
+//   { id: 5, title: "ALS", img: ALS },
+//   { id: 14, title: "IOA", img: IOA },
+//   { id: 15, title: "KING_ABDULLAH_CITY", img: KING_ABDULLAH_CITY },
+//   { id: 16, title: "KING_SAUD_UNIVERSITY", img: KING_SAUD_UNIVERSITY },
+//   {
+//     id: 17,
+//     title: "MINISTRY_OF_ENVIRONMENT_WATER_AND_AGRICULTURE",
+//     img: MINISTRY_OF_ENVIRONMENT_WATER_AND_AGRICULTURE,
+//   },
+//   { id: 18, title: "MINISTRY_OF_HEALTH", img: MINISTRY_OF_HEALTH },
+//   {
+//     id: 19,
+//     title: "MINISTRY_OF_ISLAMIC_AFFAIRS",
+//     img: MINISTRY_OF_ISLAMIC_AFFAIRS,
+//   },
+//   { id: 20, title: "MONSHAAT_21", img: MONSHAAT_21 },
+//   { id: 21, title: "NATIONAL_CENTER_FOR_WILD", img: NATIONAL_CENTER_FOR_WILD },
+//   { id: 22, title: "NATION_CENTER_FOR_BALM", img: NATION_CENTER_FOR_BALM },
+
+//   { id: 24, title: "NUPCO", img: NUPCO },
+//   {
+//     id: 25,
+//     title: "SAUDI_FOOD_AND_DRUG_AUTHORITY",
+//     img: SAUDI_FOOD_AND_DRUG_AUTHORITY,
+//   },
+//   { id: 26, title: "SGS", img: SGS },
+//   { id: 27, title: "TAIF_UNIVERSITY", img: TAIF_UNIVERSITY },
+//   { id: 28, title: "TUV", img: TUV },
+//   { id: 29, title: "UNITED_STATES", img: UNITED_STATES },
+//   { id: 30, title: "USDA", img: USDA },
+//   { id: 31, title: "USDA_ORGANIC", img: USDA_ORGANIC },
+// ];
 </script>
 
 <style scoped></style>

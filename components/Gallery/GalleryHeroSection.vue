@@ -25,7 +25,7 @@
 
 <style scoped>
 .gradientBg2 {
-  background-image: url("../../assets/img/Projects/hospitalProject.webp");
+  background-image: url("../../assets/img/Projects/GalleryHospital.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

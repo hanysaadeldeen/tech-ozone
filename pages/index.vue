@@ -3,8 +3,10 @@
     <HomeHereTwo />
     <div class="max-w-[1208px] mx-auto">
       <CoresSection />
+      <ScientificPartnershipsSection />
       <SectorsSection />
-      <SuccessPartenerClients />
+      <!-- <SuccessPartenerClients /> -->
+      <LocalCertificatesSection />
       <DevicesSection />
     </div>
     <WhyUsSection />
@@ -16,4 +18,6 @@
   <PhotoSection />
 </template>
 
-<script setup></script>
+<script setup>
+const { locale } = useI18n();
+</script>
