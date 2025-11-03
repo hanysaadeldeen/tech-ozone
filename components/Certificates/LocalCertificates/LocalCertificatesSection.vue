@@ -37,6 +37,7 @@ import Medicalservices from "../../../assets/img/Certificates/LocalCertificates/
 import NationalPoultry from "../../../assets/img/Certificates/LocalCertificates/دواجن الوطنية.svg";
 import AlShaqranforair from "../../../assets/img/Certificates/LocalCertificates/الشقران للتكييف.svg";
 import NationalforPalms from "../../../assets/img/Certificates/LocalCertificates/المركز الوطني للنخيل  والتمور.svg";
+import MitwalliSteel from "../../../assets/img/Certificates/LocalCertificates/المتولي.svg";
 
 const LocalCertificates = [
   {
@@ -57,7 +58,6 @@ const LocalCertificates = [
     img: saudiMinistry,
     imgAlt: "Saudi Ministry of Islamic Affairs Logo",
   },
-
   {
     title: "Ministry of Environment & Agriculture",
     description: "وزارة البيئة والمياه والزراعة",
@@ -82,7 +82,6 @@ const LocalCertificates = [
     img: nationalCenter,
     imgAlt: "National Center for Wildlife Logo",
   },
-
   {
     title: "Al-Qassim Municipality",
     description: "أمانة منطقة القصيم",
@@ -95,7 +94,6 @@ const LocalCertificates = [
     img: Enrichingfeelings,
     imgAlt: "اثراء المشاعر للتطوير",
   },
-
   {
     title: "Saudi Ground Services Company",
     description: "الشركة السعودية للخدمات الأرضية",
@@ -120,14 +118,12 @@ const LocalCertificates = [
     img: Medicalservices,
     imgAlt: "الخدمات الطبية للقوات المسلحة",
   },
-
   {
     title: "تأجير السيارات والشاحنات ",
     description: "CAR AND TRUCK RENTAL",
     img: BUDGET,
     imgAlt: "تأجير السيارات والشاحنات",
   },
-
   {
     title: "دواجن الوطنية",
     description: "Al Watania Poultry",
@@ -140,12 +136,17 @@ const LocalCertificates = [
     img: AlShaqranforair,
     imgAlt: "الشقران للتكييف",
   },
-
   {
     title: "Shoaa Al-Harefa Private Schools",
     description: "مدارس شعاع الحرف الأهلية",
     img: shoaaAlharefa,
     imgAlt: "Shoaa Al-Harefa Private Schools Logo",
+  },
+  {
+    title: "Mitwalli Steel Products Factory Co",
+    description: "مصنع شركة المتولي للمنتجات الفولازية",
+    img: MitwalliSteel,
+    imgAlt: "مصنع شركة المتولي للمنتجات الفولازية",
   },
 ];
 </script>

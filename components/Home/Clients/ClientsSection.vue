@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <Button title="عرض المزيد من شركائنا" background="#092892" link="/" />
+    <!-- <Button title="عرض المزيد من شركائنا" background="#092892" link="/" /> -->
   </section>
 </template>
 

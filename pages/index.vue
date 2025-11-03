@@ -12,7 +12,7 @@
     <WhyUsSection />
     <div class="max-w-[1208px] mx-auto">
       <StatisticsSection />
-      <ClientsSection />
+      <!-- <ClientsSection /> -->
     </div>
   </main>
   <PhotoSection />
