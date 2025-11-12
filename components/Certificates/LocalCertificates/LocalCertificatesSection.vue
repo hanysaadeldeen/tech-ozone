@@ -29,15 +29,15 @@ import royalCommission from "../../../assets/img/Certificates/LocalCertificates/
 import shoaaAlharefa from "../../../assets/img/Certificates/LocalCertificates/shoaaAlharefa.webp";
 import alQassim from "../../../assets/img/Certificates/LocalCertificates/alQassim.webp";
 import kingAbdullah from "../../../assets/img/Certificates/LocalCertificates/kingAbdullah.webp";
-import ministryOfHealth from "../../../assets/img/Certificates/LocalCertificates/وزارة الصحة.svg";
-import Facilities from "../../../assets/img/Certificates/LocalCertificates/منشأت.svg";
-import Enrichingfeelings from "../../../assets/img/Certificates/LocalCertificates/اثراء المشاعر.svg";
+import ministryOfHealth from "../../../assets/img/Certificates/LocalCertificates/ministryOfHealth.svg";
+import Facilities from "../../../assets/img/Certificates/LocalCertificates/monshaat.svg";
+import Enrichingfeelings from "../../../assets/img/Certificates/LocalCertificates/ithraaAlmasahair.svg";
 import BUDGET from "../../../assets/img/Certificates/LocalCertificates/BUDGET.svg";
-import Medicalservices from "../../../assets/img/Certificates/LocalCertificates/الخدمات الطبية.svg";
-import NationalPoultry from "../../../assets/img/Certificates/LocalCertificates/دواجن الوطنية.svg";
-import AlShaqranforair from "../../../assets/img/Certificates/LocalCertificates/الشقران للتكييف.svg";
-import NationalforPalms from "../../../assets/img/Certificates/LocalCertificates/المركز الوطني للنخيل  والتمور.svg";
-import MitwalliSteel from "../../../assets/img/Certificates/LocalCertificates/المتولي.svg";
+import Medicalservices from "../../../assets/img/Certificates/LocalCertificates/healthArmy.svg";
+import NationalPoultry from "../../../assets/img/Certificates/LocalCertificates/alwataniaPoultry.svg";
+import AlShaqranforair from "../../../assets/img/Certificates/LocalCertificates/alshagranForAir.svg";
+import NationalforPalms from "../../../assets/img/Certificates/LocalCertificates/nationalCenterForPalms.svg";
+import MitwalliSteel from "../../../assets/img/Certificates/LocalCertificates/ElmentwallyIroniron.svg";
 
 const LocalCertificates = [
   {
