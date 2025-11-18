@@ -25,7 +25,21 @@
           </SwiperSlide>
         </Swiper>
       </div>
-      <div class="GalleryProjects mt-[48px] max-2xl:px-6">
+      <div class="mt-8 md:mt-12">
+        <GalleryImageSection
+          title=" تطهير الكعبة المشرفة بالكامل"
+          desc=" مكة المكرمة"
+          date="2020م"
+          :images="images"
+        />
+        <GalleryImageSection
+          title="مصنع تمور الرمال الطيبة"
+          desc=" مكة المكرمة"
+          date="2020م"
+          :images="images2"
+        />
+      </div>
+      <!-- <div class="GalleryProjects mt-[48px] max-2xl:px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
           <div
             class="boxShadow rounded-3xl group overflow-hidden cursor-pointer relative"
@@ -42,10 +56,10 @@
             />
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </main>
-  <div
+  <!-- <div
     v-if="isModalOpen"
     class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 transition-all duration-300"
     @click="closeModal"
@@ -67,7 +81,7 @@
         class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
       />
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup lang="ts">
@@ -105,6 +119,15 @@ import twenteTwo from "~/assets/img/Gallery/twenteTwo.svg";
 import twenteThree from "~/assets/img/Gallery/twenteThree.webp";
 import twenteFour from "~/assets/img/Gallery/twenteFour.svg";
 // import twenteFive from "~/assets/img/Gallery/twenteFive.svg";
+
+const images = [two, three, four, five, six];
+const images2 = [seventeen, nineteen, twente, twenteThree, twenteFour];
+
+const active = ref(0);
+
+const setActive = (i: number) => {
+  active.value = i;
+};
 
 const photography = [
   // { id: 1, name: "one", src: one },
