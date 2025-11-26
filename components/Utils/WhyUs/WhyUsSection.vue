@@ -27,7 +27,13 @@
             :description="card.description"
             :background="card.background"
           >
-            <img :src="card.img" :alt="card.title" width="24" height="24" />
+            <img
+              :src="card.img"
+              :alt="card.title"
+              width="24"
+              height="24"
+              loading="lazy"
+            />
           </WhyUsCard>
         </div>
         <div class="flex justify-between gap-6 max-md:flex-col z-10 relative">
@@ -38,7 +44,13 @@
             :description="card.description"
             :background="card.background"
           >
-            <img :src="card.img" :alt="card.title" width="24" height="24" />
+            <img
+              :src="card.img"
+              :alt="card.title"
+              width="24"
+              height="24"
+              loading="lazy"
+            />
           </WhyUsCard>
         </div>
       </div>

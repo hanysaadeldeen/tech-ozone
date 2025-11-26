@@ -14,11 +14,20 @@ export default defineNuxtConfig({
     defaultLocale: "ar",
     strategy: "prefix_except_default",
     locales: [
-      { code: "ar", name: "Arabic", file: "ar.json" },
-      { code: "en", name: "English", file: "en.json" },
+      { code: "ar", name: "Arabic" },
+      { code: "en", name: "English" },
     ],
     detectBrowserLanguage: false,
+    vueI18n: "./i18n.config.ts",
   },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      fallback: "200.html",
+    },
+  },
+  ssr: false,
   app: {
     head: {
       script: [],
@@ -27,10 +36,6 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/png",
           href: "/LogoTap.svg",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap",
         },
         {
           rel: "stylesheet",
@@ -51,6 +56,17 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  build: {
+    extractCSS: true,
+    optimizeCSS: true,
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+        cssnano: {},
+      },
     },
   },
 });

@@ -18,13 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import InternationalOzone from "../../assets/img/Certificates/International/a3.webp";
-import NationalCenter from "../../assets/img/Certificates/International/alnakel.webp";
-// import FDA from "../../assets/img/Certificates/International/fda.webp";
-import USDAOrganic from "../../assets/img/Certificates/International/organic.webp";
-import USEnvironmental from "../../assets/img/Certificates/International/unitedStarte.webp";
-// import USDA from "../../assets/img/Certificates/International/usda.webp";
-
 import WORLDHEALTH from "~/assets/img/Certificates/International/WORLDHEALTH.svg";
 import UNITEDSTATE from "~/assets/img/Certificates/International/UNITEDSTATE.svg";
 import USDA from "~/assets/img/Certificates/International/USDA.svg";

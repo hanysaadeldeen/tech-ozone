@@ -34,11 +34,11 @@
         </div>
       </div>
       <div class="max-w-[200px] md:mx-auto">
-        <h1 class="text-TextD text-base font-medium mb-6">
+        <h2 class="text-TextD text-base font-medium mb-6">
           {{
             locale == "ar" ? "عن الشركة السعودية للأوزون" : "About Techozone"
           }}
-        </h1>
+        </h2>
         <nav>
           <ul>
             <li :class="{ active: adjustedPath === '/about-us' }">
@@ -60,9 +60,9 @@
         </nav>
       </div>
       <div class="max-w-[168px] md:mx-auto">
-        <h1 class="text-TextD text-base font-medium mb-6">
+        <h2 class="text-TextD text-base font-medium mb-6">
           {{ locale == "ar" ? "روابط سريعة" : "Quick Links" }}
-        </h1>
+        </h2>
         <nav>
           <ul>
             <li :class="{ active: adjustedPath === '/faqs' }">
@@ -82,9 +82,9 @@
         </nav>
       </div>
       <div class="">
-        <h1 class="text-TextD text-base font-medium mb-6">
+        <h2 class="text-TextD text-base font-medium mb-6">
           {{ locale == "ar" ? "معلومات التواصل" : "Contacts" }}
-        </h1>
+        </h2>
         <nav>
           <ul>
             <a href="tel:+966540061616" target="_blank">
@@ -127,16 +127,17 @@
         </nav>
       </div>
     </div>
-    <h1 class="px-4 text-center text-sm font-normal text-TextMD pt-6">
+    <h3 class="px-4 text-center text-sm font-normal text-TextMD pt-6">
       حقوق النشر © ٢٠٢٥ الشركة السعودية للأوزون للمشاريع والحلول
       البيئية والصحية. جميع الحقوق محفوظة. | من تصميم وتطوير
       <a
         href="https://do.com.sa/"
         target="_blank"
         class="text-Secondary font-bold underline mx-0.5 text-base"
+        aria-label="Visit DO website"
         >DO</a
       >
-    </h1>
+    </h3>
   </footer>
 </template>
 

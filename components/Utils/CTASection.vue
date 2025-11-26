@@ -7,11 +7,11 @@
       <div
         class="mb-20 md:mb-[120px] max-w-[792px] mx-auto flex flex-col items-center justify-center gap-4"
       >
-        <h1
+        <h2
           class="text-white text-center text-3xl md:text-5xl md:!leading-[72px] font-semibold"
         >
           ابدأ رحلتك مع الشركة السعودية للأوزون اليوم
-        </h1>
+        </h2>
         <p class="text-TextL text-base md:text-lg font-normal text-center">
           تواصل معنا للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك.
         </p>
@@ -33,19 +33,20 @@
               :alt="contact.title"
               width="32"
               height="32"
+              loading="lazy"
             />
           </div>
           <div>
-            <h1
+            <h3
               class="text-white text-base md:text-lg font-medium text-center mb-1 md:mb-2"
             >
               {{ contact.title }}
-            </h1>
+            </h3>
             <p class="text-TextL text-sm md:text-base font-normal">
               {{ contact.description }}
             </p>
           </div>
-          <a :href="contact.link" target="_blank">
+          <a :href="contact.link" target="_blank" :aria-label="contact.title">
             <button
               class="boxShadow2 block rounded-full text-lg font-medium py-2.5 px-12 w-full"
               :class="contact.id === 2 ? 'text-white' : ' text-Secondary'"
@@ -64,7 +65,9 @@
           v-for="number in Numbers"
           class="flex flex-col items-center justify-center gap-2 w-fit lg:w-[200px]"
         >
-          <h1 class="text-white text-3xl font-semibold">{{ number.number }}</h1>
+          <span class="text-white text-3xl font-semibold">{{
+            number.number
+          }}</span>
           <p class="text-TextL text-sm font-normal text-center">
             {{ number.title }}
           </p>

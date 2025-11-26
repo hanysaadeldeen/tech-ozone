@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 import male from "../../../assets/img/Certificates/team/male.svg";
-import femal from "../../../assets/img/Certificates/team/femal.svg";
 import drSaleh from "../../../assets/img/Certificates/team/DrSalehAlamer.svg";
 import hasnaAbdullahAlenzi from "../../../assets/img/Certificates/team/hasnaAbdullahAlenzi.svg";
 import rufaAlOtaibi from "../../../assets/img/Certificates/team/rufaAlOtaibi.svg";
@@ -30,7 +29,6 @@ import saadAlhasem from "../../../assets/img/Certificates/team/saadAlhasem.svg";
 import husseinAbuAlReesh from "../../../assets/img/Certificates/team/husseinAbuAlReesh.svg";
 import hassanKkafi from "../../../assets/img/Certificates/team/hassanKkafi.svg";
 import ahmedAlMalki from "../../../assets/img/Certificates/team/ahmedAlMalki.svg";
-import ibrahimAbdullah from "../../../assets/img/Certificates/team/ibrahimAbdullah.svg";
 import rawanAlMadaf from "../../../assets/img/Certificates/team/rawanAlMadaf.svg";
 import tareqAltahiri from "../../../assets/img/Certificates/team/tareqAltahiri.svg";
 import sultanSosawi from "../../../assets/img/Certificates/team/sultanSosawi.svg";

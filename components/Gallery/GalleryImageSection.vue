@@ -1,21 +1,21 @@
 <template>
   <div class="section2 galleryImage">
-    <h1
+    <h2
       class="text-TextD text-2xl lg:text-3xl lg:!leading-[54px] font-semibold text-center mb-2 lg:mb-4"
     >
       {{ title }}
-    </h1>
+    </h2>
     <div class="flex gap-2 justify-center">
-      <div
+      <span
         class="rounded-full galleryImage !py-2 !px-5 text-Secondary font-normal text-base"
       >
         {{ desc }}
-      </div>
-      <div
+      </span>
+      <span
         class="rounded-full galleryImage !py-2 !px-5 text-Secondary font-normal text-base"
       >
         {{ date }}
-      </div>
+      </span>
     </div>
     <div class="flex gap-2 w-full overflow-hidden mt-8 lg:mt-10">
       <div

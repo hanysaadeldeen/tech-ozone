@@ -1,5 +1,5 @@
 <template>
-  <div class="max-2xl:px-6">
+  <div class="quote max-2xl:px-6">
     <div
       class="SectorQuote max-w-[1208px] mx-auto rounded-3xl py-14 px-16 md:py-20 md:px-[120px] gradientBg relative"
     >
@@ -23,44 +23,50 @@
         />
       </div>
       <div class="max-w-[792px] mx-auto text-start">
-        <h1 class="text-white text-lg md:text-xl font-normal">
+        <h2 class="text-white text-lg md:text-xl font-normal">
           في الشركة السعودية للأوزون نؤمن أن التطهير والتعقيم بتقنية الأوزون ليس
           مجرد خدمة، بل هو حل استراتيجي يخدم القطاعات الحيوية بكفاءة عالية. من
           المستشفيات والمطارات إلى الزراعة والسياحة، نعمل على تلبية احتياجات كل
           قطاع عبر حلول متكاملة، آمنة وصديقة للبيئة. هدفنا هو رفع معايير الجودة،
           ودعم استدامة الأعمال، وبناء ثقة راسخة مع شركائنا في مختلف المجالات.
-        </h1>
+        </h2>
 
-        <div
+        <ul
           class="mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-2 justify-between gap-4 md:gap-6 text-TextL text-base font-normal"
         >
-          <div class="relative">
-            <div
+          <li class="relative">
+            <span
               class="absolute top-1/2 right-0 -translate-y-1/2 bg-Primary rounded-full size-2"
-            ></div>
-            <p class="mr-5">صديق للبيئة، يتحول إلى أكسجين نقي بعد الاستخدام.</p>
-          </div>
-          <div class="relative">
-            <div
+            ></span>
+            <span class="mr-5"
+              >صديق للبيئة، يتحول إلى أكسجين نقي بعد الاستخدام.</span
+            >
+          </li>
+          <li class="relative">
+            <span
               class="absolute top-1/2 right-0 -translate-y-1/2 bg-Primary rounded-full size-2"
-            ></div>
-            <p class="mr-5">فعّال وسريع في القضاء على الفيروسات والجراثيم.</p>
-          </div>
-          <div class="relative">
-            <div
+            ></span>
+            <span class="mr-5"
+              >فعّال وسريع في القضاء على الفيروسات والجراثيم.</span
+            >
+          </li>
+          <li class="relative">
+            <span
               class="absolute top-1/2 right-0 -translate-y-1/2 bg-Primary rounded-full size-2"
-            ></div>
-            <p class="mr-5">
+            ></span>
+            <span class="mr-5">
               يقلل الاعتماد على المواد الكيميائية ويحافظ على السلامة.
-            </p>
-          </div>
-          <div class="relative">
-            <div
+            </span>
+          </li>
+          <li class="relative">
+            <span
               class="absolute top-1/2 right-0 -translate-y-1/2 bg-Primary rounded-full size-2"
-            ></div>
-            <p class="mr-5">مناسب للقطاعات الحيوية مثل المستشفيات والمطارات</p>
-          </div>
-        </div>
+            ></span>
+            <span class="mr-5"
+              >مناسب للقطاعات الحيوية مثل المستشفيات والمطارات.</span
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </div>

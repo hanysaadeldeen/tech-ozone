@@ -5,16 +5,16 @@
         <div
           class="max-w-[792px] flex flex-col items-start justify-start gap-4 md:gap-6 lg:gap-8"
         >
-          <div
+          <span
             class="glassy boxShadow text-Secondary border broder-[#0928920A] rounded-full text-lg font-medium py-2 px-8 md:py-4 md:px-12"
           >
             عن الشركة السعودية للأوزون
-          </div>
-          <h1
+          </span>
+          <h2
             class="text-xl md:text-2xl lg:text-[36px] lg:!leading-[52px] text-TextD font-semibold"
           >
             الريادة السعودية في تقديم حلول التعقيم بالأوزون منذ 2011
-          </h1>
+          </h2>
         </div>
         <p class="text-lg font-normal text-TextMD mt-2 md:mt-4">
           نحن الشركة السعودية الأولى والرائدة في مجال التعقيم والتطهير بتقنية

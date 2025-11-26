@@ -9,11 +9,11 @@
       <slot />
     </div>
     <div>
-      <h1
+      <h3
         class="text-TextD text-base md:text-xl font-semibold text-center mb-2"
       >
         {{ title }}
-      </h1>
+      </h3>
       <p class="text-base font-normal text-TextMD text-center">
         {{ description }}
       </p>

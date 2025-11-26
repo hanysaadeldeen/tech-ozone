@@ -10,41 +10,41 @@
       <div
         class="max-lg:hidden absolute w-14 h-[calc(100%-100px)] top-[50px] left-1/2 -translate-x-1/2"
       >
-        <div class="relative flex flex-col justify-between h-full">
-          <div
+        <ul class="relative flex flex-col justify-between h-full">
+          <span
             class="absolute h-full w-0.5 bg-[#FFE6E6] left-1/2 -translate-x-1/2"
-          ></div>
-          <div
+          ></span>
+          <li
             class="rounded-full bg-Primary text-white text-xl font-medium py-3 px-[22px] size-14 flex justify-center items-center z-10"
           >
             1
-          </div>
-          <div
+          </li>
+          <li
             class="rounded-full bg-[#FFE6E6] text-Primary text-xl font-medium py-3 px-[22px] size-14 flex justify-center items-center z-10"
           >
             2
-          </div>
-          <div
+          </li>
+          <li
             class="rounded-full bg-[#FFE6E6] text-Primary text-xl font-medium py-3 px-[22px] size-14 flex justify-center items-center z-10"
           >
             3
-          </div>
-          <div
+          </li>
+          <li
             class="rounded-full bg-[#FFE6E6] text-Primary text-xl font-medium py-3 px-[22px] size-14 flex justify-center items-center z-10"
           >
             4
-          </div>
-          <div
+          </li>
+          <li
             class="rounded-full bg-[#FFE6E6] text-Primary text-xl font-medium py-3 px-[22px] size-14 flex justify-center items-center z-10"
           >
             5
-          </div>
-          <div
+          </li>
+          <li
             class="rounded-full bg-[#FFE6E6] text-Primary text-xl font-medium py-3 px-[22px] size-14 flex justify-center items-center z-10"
           >
             6
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
       <div class="max-lg:flex gap-14 relative">
         <div
@@ -60,9 +60,9 @@
           <div
             class="lg:ml-auto w-fit lg:mt-[50px] boxShadow py-4 px-6 lg:py-8 lg:px-10 bg-white rounded-3xl max-w-[376px] relative"
           >
-            <h1 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
+            <h3 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
               2011 – التأسيس
-            </h1>
+            </h3>
             <p class="text-TextMD text-sm md:text-base font-normal">
               بداية الشركة السعودية للأوزون كأول شركة سعودية متخصصة في حلول
               التعقيم بالأوزون.
@@ -78,9 +78,9 @@
           <div
             class="lg:mr-auto w-fit mt-8 boxShadow py-4 px-6 lg:py-8 lg:px-10 bg-white rounded-3xl max-w-[376px] relative"
           >
-            <h1 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
+            <h3 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
               2014 – التوسع
-            </h1>
+            </h3>
             <p class="text-TextMD text-sm md:text-base font-normal">
               إطلاق خدمات جديدة للقطاع الصحي والبلديات بتقنيات حديثة.
             </p>
@@ -96,9 +96,9 @@
           <div
             class="lg:ml-auto w-fit mt-8 boxShadow py-4 px-6 lg:py-8 lg:px-10 bg-white rounded-3xl max-w-[376px] relative"
           >
-            <h1 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
+            <h3 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
               2017 – الريادة
-            </h1>
+            </h3>
 
             <p class="text-TextMD text-sm md:text-base font-normal">
               توقيع شراكات استراتيجية مع جهات حكومية وخاصة رائدة.
@@ -114,9 +114,9 @@
           <div
             class="lg:mr-auto w-fit mt-8 boxShadow py-4 px-6 lg:py-8 lg:px-10 bg-white rounded-3xl max-w-[376px] relative"
           >
-            <h1 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
+            <h3 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
               2020 – الجائحة
-            </h1>
+            </h3>
 
             <p class="text-TextMD text-sm md:text-base font-normal">
               مكافحة كورونا بحلول تعقيم آمنة ومعتمدة وفق أعلى المعايير.
@@ -132,9 +132,9 @@
           <div
             class="lg:ml-auto w-fit mt-8 boxShadow py-4 px-6 lg:py-8 lg:px-10 bg-white rounded-3xl max-w-[376px] relative"
           >
-            <h1 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
+            <h3 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
               2023 – الانتشار
-            </h1>
+            </h3>
             <p class="text-TextMD text-sm md:text-base font-normal">
               تغطية 12 منطقة وخدمة مئات العملاء في مختلف القطاعات.
             </p>
@@ -149,9 +149,9 @@
           <div
             class="lg:mr-auto w-fit mt-8 boxShadow py-4 px-6 lg:py-8 lg:px-10 bg-white rounded-3xl max-w-[376px] relative"
           >
-            <h1 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
+            <h3 class="text-TextD text-lg md:text-xl font-medium mb-1 lg:mb-3">
               اليوم – الاستدامة
-            </h1>
+            </h3>
             <p class="text-TextMD text-sm md:text-base font-normal">
               تقديم حلول متكاملة من التوريد حتى الصيانة والدعم الفني.
             </p>

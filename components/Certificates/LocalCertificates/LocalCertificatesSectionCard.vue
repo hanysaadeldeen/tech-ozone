@@ -8,22 +8,20 @@
       <img
         :src="img"
         :alt="imgAlt"
+        loading="lazy"
         class="w-full h-full max-w-full max-h-[136px] object-contain"
       />
     </div>
     <div class="py-5 lg:py-7 px-4 lg:px-6">
-      <h1
+      <h3
         v-if="title"
         class="text-TextD text-base lg:text-lg font-medium mb-1 md:mb-2 text-center"
       >
         {{ title }}
-      </h1>
-      <h1
-        v-if="description"
-        class="text-TextMD text-lg font-normal text-center"
-      >
+      </h3>
+      <p v-if="description" class="text-TextMD text-lg font-normal text-center">
         {{ description }}
-      </h1>
+      </p>
     </div>
   </div>
 </template>

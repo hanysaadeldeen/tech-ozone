@@ -54,11 +54,17 @@
     <div
       class="bg-[#EEF3FF] rounded-full py-4 md:py-6 px-6 md:px-8 flex items-center gap-3 mt-10 w-fit mx-auto md:mt-20"
     >
-      <img src="~/assets/img/verify.svg" alt="verify" width="40" height="40" />
-      <h1 class="text-[#4A5568] font-normal text-base md:text-xl lg:text-2xl">
+      <img
+        src="~/assets/img/verify.svg"
+        alt="verify"
+        width="40"
+        height="40"
+        loading="lazy"
+      />
+      <h4 class="text-[#4A5568] font-normal text-base md:text-xl lg:text-2xl">
         الشركة السعودية للأوزون معتمدة ومرخصة من قبل الجهات الرسمية والتشريعة في
         المملكة العربية السعودية
-      </h1>
+      </h4>
     </div>
   </section>
 </template>

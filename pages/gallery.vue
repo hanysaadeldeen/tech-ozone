@@ -39,49 +39,8 @@
           :images="images2"
         />
       </div>
-      <!-- <div class="GalleryProjects mt-[48px] max-2xl:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-          <div
-            class="boxShadow rounded-3xl group overflow-hidden cursor-pointer relative"
-            v-for="img in visibleItems"
-          >
-            <img
-              :src="img.src"
-              alt="gallery"
-              width="584"
-              loading="lazy"
-              height="400"
-              class="w-full h-full brightness-[0.8] group-hover:brightness-100 transition-all ease-in-out duration-300 rounded-3xl group-hover:scale-110"
-              @click="openModal(img.src)"
-            />
-          </div>
-        </div>
-      </div> -->
     </div>
   </main>
-  <!-- <div
-    v-if="isModalOpen"
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 transition-all duration-300"
-    @click="closeModal"
-  >
-    <div
-      class="relative w-full max-w-[90vw] max-h-[90vh] flex items-center justify-center pt-14"
-      @click.stop
-    >
-      <button
-        @click="closeModal"
-        class="absolute top-0 right-0 text-white text-2xl hover:text-gray-300 transition-colors duration-200 z-10"
-      >
-        ✕
-      </button>
-      <img
-        :src="selectedImage"
-        :alt="'Portfolio Photography'"
-        loading="lazy"
-        class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg shadow-2xl"
-      />
-    </div>
-  </div> -->
 </template>
 
 <script setup lang="ts">

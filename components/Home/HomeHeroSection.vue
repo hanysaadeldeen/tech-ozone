@@ -1,408 +1,224 @@
 <template>
-    <div class="carousel  " ref="carouselRef">
+  <div
+    class="carousel relative overflow-hidden h-[calc(100dvh-105px)] md:h-[calc(100dvh-117px)]"
+  >
+    <div
+      class="swiper tinyflow-slider relative bg-[#F5F7FA] max-h-full"
+      :data-autoplay-delay="9000"
+    >
+      <div
+        :dir="locale === 'ar' ? 'rtl' : 'ltr'"
+        class="flex justify-center items-center gap-6 absolute bottom-[10%] right-0 w-full text-center z-10"
+      >
+        <button
+          type="button"
+          aria-label="Prev"
+          ref="prevEl"
+          class="tinyflow-slider__arrow2 glassyW boxShadow flex justify-center items-center size-10 rounded-full"
+        >
+          <LucideChevronRight :size="24" class="text-white" />
+        </button>
+        <button
+          type="button"
+          aria-label="Next"
+          class="tinyflow-slider__arrow2 size-10 rounded-full glassyW boxShadow flex justify-center items-center"
+          ref="nextEl"
+        >
+          <LucideChevronLeft :size="24" class="text-white" />
+        </button>
+      </div>
 
-        <div class="list  relative w-full h-full ">
-            <div class="item " v-for="(slide, i) in slides" :key="i">
-
-                <img :src="slide.img" class="brightness-[0.4]" :alt="slide.title" />
-                <div class=" content xl:mr-[calc((100vw-1208px)/2)]">
-                    <div class="title text-white text-2xl md:text-4xl lg:text-5xl font-semibold mb-4">{{ slide.title }}
-                    </div>
-                    <div class="des max-w-[480px] text-TextL text-xl font-normal">{{ slide.description }}</div>
-                    <div class="buttons flex justify-start">
-                        <Button title="احجز استشارة مجانية" background="#ED2024" link="contact-us" />
-                    </div>
+      <Swiper
+        :modules="modules"
+        :slides-per-view="1"
+        effect="fade"
+        :loop="true"
+        :autoplay="{
+          delay: autoplayDelay,
+          disableOnInteraction: false,
+        }"
+        :keyboard="{
+          enabled: true,
+          onlyInViewport: true,
+        }"
+        :navigation="{
+          nextEl: nextEl,
+          prevEl: prevEl,
+        }"
+        :speed="speed"
+      >
+        <SwiperSlide v-for="(slide, i) in slides" :key="'thumb-' + i">
+          <div class="tinyflow-slide">
+            <img
+              class="tinyflow-slide__background__element"
+              :src="slide.img"
+              :alt="slide.title"
+              draggable="false"
+            />
+            <div
+              class="tinyflow-slide__card max-w-[1208px] mx-auto max-2xl:px-6 z-20 relative"
+            >
+              <div class="container">
+                <div class="max-w-[584px]">
+                  <h1
+                    class="text-3xl md:text-5xl lg:!leading-[72px] font-semibold text-white text-center !mb-4"
+                  >
+                    {{ slide.title }}
+                  </h1>
+                  <p
+                    class="text-xl md:text-2xl lg:text-3xl font-normal text-center text-[#C3CAD3]"
+                  >
+                    {{ slide.description }}
+                  </p>
                 </div>
+              </div>
             </div>
-        </div>
-
-
-        <div class="thumbnail">
-            <div class="item" v-for="(slide, i) in slides" :key="'thumb-' + i">
-                <img :src="slide.img" :alt="slide.title" />
-            </div>
-        </div>
-
-        <div class="arrows ">
-            <button ref="nextRef" class="glassyW boxShadow flex justify-center items-center">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-            <button ref="prevRef" class="glassyW boxShadow flex justify-center items-center">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-        </div>
-
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
+  </div>
 </template>
 
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
-import apple from "../../assets/img/Projects/apple.webp"
-import checken from "../../assets/img/Projects/checken.webp"
-import desert from "../../assets/img/Projects/desert.webp"
-import mosq from "../../assets/img/Projects/mosq.webp"
-import hospitalProject from "../../assets/img/Projects/hospitalProject.webp"
-import tamr from "../../assets/img/Projects/tamr.webp"
+<script setup lang="ts">
+import { ref } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Autoplay, Keyboard, EffectFade } from "swiper/modules";
+
+const { locale } = useI18n();
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
+
+const modules = [Navigation, Autoplay, Keyboard, EffectFade];
+
+import ozone from "../../assets/img/Projects/aya4.webp";
+import chicken from "../../assets/img/Projects/chicken.webp";
+import hotel from "../../assets/img/Projects/hotel.webp";
+import tamr from "../../assets/img/Projects/tamr.webp";
+import water from "../../assets/img/Projects/water.webp";
 
 const slides = [
-    {
-        img: apple,
-        title: "قطاع الزراعة",
-        description: "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي."
-    },
-    {
-        img: checken,
-        title: "قطاع الدواجن",
-        description: "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي."
-    },
-    {
-        img: desert,
-        title: "قطاع الفنادق والسياحة ",
-        description: "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي."
-    },
-    {
-        img: mosq,
-        title: "قطاع الحج والعمرة",
-        description: "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي."
-    },
-    {
-        img: hospitalProject,
-        title: "القطاع الصحي",
-        description: "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي."
-    },
-    {
-        img: tamr,
-        title: "قطاع التمور",
-        description: "نوفّر خدمات متخصصة تخدم القطاعات الحساسة في المملكة، أبرزها تطهير الكعبة المشرفة والمسجد الحرام، وتنظيف وتكييف سجاد المسجد الحرام والمسجد النبوي."
-    },
+  {
+    img: ozone,
+    title: "",
+    description: "",
+  },
+  {
+    img: water,
+    title: "",
+    description: "",
+  },
+  {
+    img: tamr,
+    title: "",
+    description: "",
+  },
+  {
+    img: hotel,
+    title: "",
+    description: "",
+  },
+  {
+    img: chicken,
+    title: "",
+    description: "",
+  },
 ];
 
-const carouselRef = ref(null);
-const nextRef = ref(null);
-const prevRef = ref(null);
-
-let runTimeOut;
-let runNextAuto;
-const timeRunning = 3000;
-const timeAutoNext = 7000;
-
-onMounted(() => {
-    const carouselDom = carouselRef.value;
-    const nextDom = nextRef.value;
-    const prevDom = prevRef.value;
-    const listDom = carouselDom.querySelector(".list");
-    const thumbnailDom = carouselDom.querySelector(".thumbnail");
-
-    function showSlider(type) {
-        const sliderItems = listDom.querySelectorAll(".item");
-        const thumbnailItems = thumbnailDom.querySelectorAll(".item");
-
-        if (type === "next") {
-            listDom.appendChild(sliderItems[0]);
-            thumbnailDom.appendChild(thumbnailItems[0]);
-            carouselDom.classList.add("next");
-        } else {
-            listDom.prepend(sliderItems[sliderItems.length - 1]);
-            thumbnailDom.prepend(thumbnailItems[thumbnailItems.length - 1]);
-            carouselDom.classList.add("prev");
-        }
-
-        clearTimeout(runTimeOut);
-        runTimeOut = setTimeout(() => {
-            carouselDom.classList.remove("next");
-            carouselDom.classList.remove("prev");
-        }, timeRunning);
-
-        clearTimeout(runNextAuto);
-        runNextAuto = setTimeout(() => {
-            nextDom.click();
-        }, timeAutoNext);
-    }
-
-    nextDom.addEventListener("click", () => showSlider("next"));
-    prevDom.addEventListener("click", () => showSlider("prev"));
-
-    runNextAuto = setTimeout(() => {
-        nextDom.click();
-    }, timeAutoNext);
-});
-
-onBeforeUnmount(() => {
-    clearTimeout(runTimeOut);
-    clearTimeout(runNextAuto);
-});
+const nextEl = ref<HTMLElement | null>(null);
+const prevEl = ref<HTMLElement | null>(null);
+const speed = 1000;
+const autoplayDelay = 7000;
 </script>
-
 <style scoped>
-/* carousel */
+:root {
+  --color-primary: #e0fee6;
+  --color-navigation-bg-rgb: 69, 71, 67;
+  --easing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .carousel {
-    height: 100vh;
-    margin-top: -112px;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
 }
 
-
-.carousel .list .item {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0 0 0 0;
+.tinyflow-slide {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  isolation: isolate;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 
-.carousel .list .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.tinyflow-slide__background__element {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 
-.carousel .list .item .content {
-    position: absolute;
-    width: 584px;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    color: #fff;
-
-
+.tinyflow-slide__background__element {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: -webkit-transform calc(var(--data-speed, 300) * 1ms)
+    linear calc(var(--data-speed, 300) * 1ms);
+  transition: -webkit-transform calc(var(--data-speed, 300) * 1ms) linear
+    calc(var(--data-speed, 300) * 1ms);
+  -o-transition: transform calc(var(--data-speed, 300) * 1ms) linear
+    calc(var(--data-speed, 300) * 1ms);
+  transition: transform calc(var(--data-speed, 300) * 1ms) linear
+    calc(var(--data-speed, 300) * 1ms);
+  transition: transform calc(var(--data-speed, 300) * 1ms) linear
+      calc(var(--data-speed, 300) * 1ms),
+    -webkit-transform calc(var(--data-speed, 300) * 1ms) linear calc(var(
+            --data-speed,
+            300
+          ) * 1ms);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
 }
 
-.carousel .list .item .content .title,
-.carousel .list .item .content .des,
-.carousel .list .item .content .buttons {
-    padding: 0 20px;
+.swiper-slide-active .tinyflow-slide__background__element {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-delay: 0ms;
+  -o-transition-delay: 0ms;
+  transition-delay: 0ms;
 }
 
-.carousel .list .item .buttons {
-    margin-top: 40px;
+.tinyflow-slide__content {
+  position: relative;
+  -webkit-transition: all calc((var(--data-speed, 300) / 2) * 1ms)
+    var(--easing-function);
+  -o-transition: all calc((var(--data-speed, 300) / 2) * 1ms)
+    var(--easing-function);
+  transition: all calc((var(--data-speed, 300) / 2) * 1ms)
+    var(--easing-function);
 }
 
-
-
-
-/* thumbail */
-.thumbnail {
-    position: absolute;
-    bottom: 50px;
-    right: 50%;
-    width: max-content;
-    z-index: 100;
-    display: flex;
-    gap: 20px;
+.tinyflow-slider__arrow2:active {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.thumbnail .item {
-    width: 150px;
-    height: 220px;
-    flex-shrink: 0;
-    position: relative;
-}
-
-.thumbnail .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-
-/* arrows */
-.arrows {
-    position: absolute;
-    bottom: 10%;
-    right: 30%;
-    transform: translateX(20%);
-    z-index: 100;
-    width: 300px;
-    max-width: 30%;
-    /* display: flex; */
-    display: none;
-    gap: 10px;
-    align-items: center;
-}
-
-.arrows button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    /* background-color: #AFC1C5; */
-    border: none;
-    color: white;
-    font-family: monospace;
-    font-weight: bold;
-    transition: .5s;
-}
-
-.arrows button:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-/* animation */
-.carousel .list .item:nth-child(1) {
-    z-index: 1;
-}
-
-
-@media (max-width: 1024px) {
-
-    .arrows,
-    .thumbnail {
-        display: none;
-    }
-
-
-    .carousel .list .item .content {
-        width: 100%;
-    }
-
-    .carousel .list .item .content .title,
-    .carousel .list .item .content .des,
-    .carousel .list .item .content .buttons {
-        padding: 0 24px;
-    }
-}
-
-
-/* animation text in first item */
-
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons {
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
-}
-
-@keyframes showContent {
-    to {
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-.carousel .list .item:nth-child(1) .content .title {
-    animation-delay: 1.2s !important;
-}
-
-.carousel .list .item:nth-child(1) .content .des {
-    animation-delay: 1.6s !important;
-}
-
-.carousel .list .item:nth-child(1) .content .buttons {
-    animation-delay: 1.8s !important;
-}
-
-/* create animation when next click */
-.carousel.next .list .item:nth-child(1) img {
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
-}
-
-@keyframes showImage {
-    to {
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
-
-.carousel.next .thumbnail .item:nth-last-child(1) {
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-
-.carousel.prev .list .item img {
-    z-index: 100;
-}
-
-@keyframes showThumbnail {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-}
-
-.carousel.next .thumbnail {
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes effectNext {
-    from {
-        transform: translateX(150px);
-    }
-}
-
-
-/* prev click */
-
-.carousel.prev .list .item:nth-child(2) {
-    z-index: 2;
-}
-
-.carousel.prev .list .item:nth-child(2) img {
-    animation: outFrame 0.5s linear 1 forwards;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-@keyframes outFrame {
-    to {
-        width: 150px;
-        height: 220px;
-        bottom: 50px;
-        left: 50%;
-        border-radius: 20px;
-    }
-}
-
-.carousel.prev .thumbnail .item:nth-child(1) {
-    overflow: hidden;
-    opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-
-.carousel.next .arrows button,
-.carousel.prev .arrows button {
-    pointer-events: none;
-}
-
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons {
-    animation: contentOut 1.5s linear 1 forwards !important;
-}
-
-@keyframes contentOut {
-    to {
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-
-@media screen and (max-width: 678px) {
-    .carousel .list .item .content {
-        padding-right: 0;
-    }
-
-    .carousel .list .item .content .title {
-        font-size: 30px;
-    }
+@media (hover: hover) {
+  .tinyflow-slider__arrow2:hover,
+  .tinyflow-slider__arrow2:focus-visible {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
 }
 </style>
