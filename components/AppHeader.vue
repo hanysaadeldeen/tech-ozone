@@ -9,44 +9,35 @@
           <nuxt-link :to="localePath('/')" class="block relative z-40">
             <img
               src="~/assets/img/Utils/Logo.svg"
-              class="max-w-fit xl:h-[68px] relative block"
+              class="object-fill relative block"
               alt="techOzone"
-              height="68"
-              width="186"
               loading="eager"
+              width="136"
+              height="90"
               fetchpriority="high"
             />
           </nuxt-link>
           <div class="hidden lg:block">
             <nav class="relative h-full">
               <ul class="flex items-center">
-                <nuxt-link :to="localePath('index')">
-                  <li :class="{ active: adjustedPath === '/' }">الرئيسية</li>
-                </nuxt-link>
+                <li :class="{ active: adjustedPath === '/' }">
+                  <nuxt-link :to="localePath('index')"> الرئيسية </nuxt-link>
+                </li>
 
-                <nuxt-link :to="localePath('about-us')">
-                  <li :class="{ active: adjustedPath === '/about-us' }">
-                    من نحن
-                  </li>
-                </nuxt-link>
-                <nuxt-link :to="localePath('sectors')">
-                  <li :class="{ active: adjustedPath.includes('/sectors') }">
-                    القطاعات
-                  </li>
-                </nuxt-link>
-
-                <nuxt-link :to="localePath('certificates-trust')">
-                  <li
-                    :class="{ active: adjustedPath === '/certificates-trust' }"
-                  >
+                <li :class="{ active: adjustedPath === '/about-us' }">
+                  <nuxt-link :to="localePath('about-us')"> من نحن </nuxt-link>
+                </li>
+                <li :class="{ active: adjustedPath.includes('/sectors') }">
+                  <nuxt-link :to="localePath('sectors')"> القطاعات </nuxt-link>
+                </li>
+                <li :class="{ active: adjustedPath === '/certificates-trust' }">
+                  <nuxt-link :to="localePath('certificates-trust')">
                     الاعتمادات والثقة
-                  </li>
-                </nuxt-link>
-                <nuxt-link :to="localePath('gallery')">
-                  <li :class="{ active: adjustedPath.includes('/gallery') }">
-                    المعرض
-                  </li>
-                </nuxt-link>
+                  </nuxt-link>
+                </li>
+                <li :class="{ active: adjustedPath.includes('/gallery') }">
+                  <nuxt-link :to="localePath('gallery')"> المعرض </nuxt-link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -83,79 +74,79 @@
             },
           ]"
         >
-          <div class="pt-[83px] lg:pt-[100px]">
+          <div class="pt-[120px]">
             <nav class="mt-4 inline-block w-full">
               <ul class="flex flex-col gap-5">
-                <nuxt-link
-                  :to="localePath('index')"
-                  @click="isSideBar = !isSideBar"
-                  class="w-full"
+                <li
+                  :class="[
+                    { active: adjustedPath === '/' },
+                    'text-white hover:text-PrimaryPL3',
+                  ]"
                 >
-                  <li
-                    :class="[
-                      { active: adjustedPath === '/' },
-                      'text-white hover:text-PrimaryPL3',
-                    ]"
+                  <nuxt-link
+                    :to="localePath('index')"
+                    @click="isSideBar = !isSideBar"
+                    class="w-full"
                   >
                     الرئيسية
-                  </li>
-                </nuxt-link>
-                <nuxt-link
-                  :to="localePath('about-us')"
-                  @click="isSideBar = !isSideBar"
-                  class="w-full"
+                  </nuxt-link>
+                </li>
+                <li
+                  :class="[
+                    { active: adjustedPath === '/about-us' },
+                    'text-white hover:text-PrimaryPL3',
+                  ]"
                 >
-                  <li
-                    :class="[
-                      { active: adjustedPath === '/about-us' },
-                      'text-white hover:text-PrimaryPL3',
-                    ]"
+                  <nuxt-link
+                    :to="localePath('about-us')"
+                    @click="isSideBar = !isSideBar"
+                    class="w-full"
                   >
                     من نحن
-                  </li>
-                </nuxt-link>
-                <nuxt-link
-                  :to="localePath('sectors')"
-                  @click="isSideBar = !isSideBar"
-                  class="w-full"
+                  </nuxt-link>
+                </li>
+                <li
+                  :class="[
+                    { active: adjustedPath.includes('/sectors') },
+                    'text-white hover:text-PrimaryPL3',
+                  ]"
                 >
-                  <li
-                    :class="[
-                      { active: adjustedPath.includes('/sectors') },
-                      'text-white hover:text-PrimaryPL3',
-                    ]"
+                  <nuxt-link
+                    :to="localePath('sectors')"
+                    @click="isSideBar = !isSideBar"
+                    class="w-full"
                   >
                     القطاعات
-                  </li>
-                </nuxt-link>
-                <nuxt-link
-                  :to="localePath('certificates-trust')"
-                  @click="isSideBar = !isSideBar"
-                  class="w-full"
+                  </nuxt-link>
+                </li>
+                <li
+                  :class="[
+                    { active: adjustedPath === '/certificates-trust' },
+                    'text-white hover:text-PrimaryPL3',
+                  ]"
                 >
-                  <li
-                    :class="[
-                      { active: adjustedPath === '/certificates-trust' },
-                      'text-white hover:text-PrimaryPL3',
-                    ]"
+                  <nuxt-link
+                    :to="localePath('certificates-trust')"
+                    @click="isSideBar = !isSideBar"
+                    class="w-full"
                   >
                     الاعتمادات والثقة
-                  </li>
-                </nuxt-link>
-                <nuxt-link
-                  :to="localePath('gallery')"
-                  @click="isSideBar = !isSideBar"
-                  class="w-full"
+                  </nuxt-link>
+                </li>
+                <li
+                  :class="[
+                    { active: adjustedPath === '/gallery' },
+                    'text-white hover:text-PrimaryPL3',
+                  ]"
                 >
-                  <li
-                    :class="[
-                      { active: adjustedPath === '/gallery' },
-                      'text-white hover:text-PrimaryPL3',
-                    ]"
+                  <nuxt-link
+                    :to="localePath('gallery')"
+                    @click="isSideBar = !isSideBar"
+                    class="w-full"
                   >
                     المعرض
-                  </li>
-                </nuxt-link>
+                  </nuxt-link>
+                </li>
               </ul>
             </nav>
             <div class="mt-5 justify-between flex-col">
@@ -172,14 +163,6 @@
 </template>
 
 <script setup lang="ts">
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// onMounted(() => {
-//     AOS.init({
-//         duration: 600,
-//         once: true,
-//     })
-// })
 import { useDebounceFn } from "@vueuse/core";
 const { locale, setLocale } = useI18n();
 const localePath = useLocalePath();
@@ -241,21 +224,26 @@ ul li {
   transition: color 0.3s ease;
   will-change: color;
   line-height: 25px;
-  padding: 8px 24px;
   text-align: center;
   border-bottom: 2px solid transparent;
 }
-
+ul li a {
+  padding: 8px 24px;
+}
 @media (min-width: 1024px) and (max-width: 1280px) {
   ul li {
-    font-size: 14px;
     line-height: 22.4px;
+  }
+  ul li a {
     padding: 8px 16px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   ul li {
+    padding: 0px 0px;
+  }
+  ul li a {
     padding: 8px 0px;
   }
 }

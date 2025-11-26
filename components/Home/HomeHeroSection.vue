@@ -94,7 +94,7 @@ import "swiper/css/effect-fade";
 
 const modules = [Navigation, Autoplay, Keyboard, EffectFade];
 
-import ozone from "../../assets/img/Projects/aya4.webp";
+import ozone from "../../assets/img/Projects/ozone.webp";
 import chicken from "../../assets/img/Projects/chicken.webp";
 import hotel from "../../assets/img/Projects/hotel.webp";
 import tamr from "../../assets/img/Projects/tamr.webp";
