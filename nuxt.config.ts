@@ -20,14 +20,24 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts",
   },
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: true,
+  //     failOnError: false,
+  //     fallback: "200.html",
+  //   },
+  // },
+
   nitro: {
-    prerender: {
-      crawlLinks: true,
-      failOnError: false,
-      fallback: "200.html",
-    },
-  },
-  ssr: false,
+  port: 3001,
+  host: '127.0.0.1'
+},
+devServer: {
+  port: 3001,
+  host: '127.0.0.1'
+}
+
+  // ssr: false,
   app: {
     head: {
       script: [],
