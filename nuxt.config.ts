@@ -20,22 +20,14 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts",
   },
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true,
-  //     failOnError: false,
-  //     fallback: "200.html",
-  //   },
-  // },
-
   nitro: {
-  port: 3001,
-  host: '127.0.0.1'
-},
-devServer: {
-  port: 3001,
-  host: '127.0.0.1'
-}
+    port: 3001,
+    host: "127.0.0.1",
+  },
+  devServer: {
+    port: 3001,
+    host: "127.0.0.1",
+  },
 
   // ssr: false,
   app: {
@@ -68,15 +60,15 @@ devServer: {
       autoprefixer: {},
     },
   },
-  build: {
-    extractCSS: true,
-    optimizeCSS: true,
-    postcss: {
-      plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-        cssnano: {},
-      },
-    },
-  },
+  // build: {
+  //   extractCSS: true,
+  //   optimizeCSS: true,
+  //   postcss: {
+  //     plugins: {
+  //       tailwindcss: {},
+  //       autoprefixer: {},
+  //       cssnano: {},
+  //     },
+  //   },
+  // },
 });
