@@ -23,7 +23,12 @@
           <p class="text-TextMD text-base md:text-lg font-normal"></p>
         </div>
         <Button title="تحميل" background="#ED2024">
-          <i class="fa-solid fa-download text-white block"></i>
+          <img
+            src="~/assets/img/Utils/download-solid-full.svg"
+            alt="download-solid-full"
+            loading="lazy"
+            class="size-5"
+          />
         </Button>
       </div>
     </div>

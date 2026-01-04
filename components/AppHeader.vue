@@ -35,8 +35,8 @@
                     الاعتمادات والثقة
                   </nuxt-link>
                 </li>
-                <li :class="{ active: adjustedPath.includes('/gallery') }">
-                  <nuxt-link :to="localePath('gallery')"> المعرض </nuxt-link>
+                <li :class="{ active: adjustedPath.includes('/projects') }">
+                  <nuxt-link :to="localePath('projects')"> مشاريعنا </nuxt-link>
                 </li>
               </ul>
             </nav>
@@ -44,7 +44,7 @@
           <div
             class="hidden lg:flex justify-between items-center gap-2 xl:gap-6"
           >
-            <LanguageSwitcher />
+            <!-- <LanguageSwitcher /> -->
             <nuxt-link :to="localePath('contact-us')">
               <Button title="تواصل معنا" background="#092892" />
             </nuxt-link>
@@ -135,22 +135,22 @@
                 </li>
                 <li
                   :class="[
-                    { active: adjustedPath === '/gallery' },
+                    { active: adjustedPath === '/projects' },
                     'text-white hover:text-PrimaryPL3',
                   ]"
                 >
                   <nuxt-link
-                    :to="localePath('gallery')"
+                    :to="localePath('projects')"
                     @click="isSideBar = !isSideBar"
                     class="w-full"
                   >
-                    المعرض
+                    مشاريعنا
                   </nuxt-link>
                 </li>
               </ul>
             </nav>
             <div class="mt-5 justify-between flex-col">
-              <LanguageSwitcher isWhite />
+              <!-- <LanguageSwitcher isWhite /> -->
               <nuxt-link :to="localePath('contact-us')" class="block mt-5">
                 <Button title="تواصل معنا" background="#092892" />
               </nuxt-link>

@@ -53,8 +53,8 @@
                 الاعتمادات والثقة
               </nuxt-link>
             </li>
-            <li :class="{ active: adjustedPath === '/gallery' }">
-              <nuxt-link :to="localePath('/gallery')"> المعرض </nuxt-link>
+            <li :class="{ active: adjustedPath === '/projects' }">
+              <nuxt-link :to="localePath('/projects')"> مشاريعنا </nuxt-link>
             </li>
           </ul>
         </nav>
@@ -127,17 +127,23 @@
         </nav>
       </div>
     </div>
-    <h3 class="px-4 text-center text-sm font-normal text-TextMD pt-6">
-      حقوق النشر © ٢٠٢٥ الشركة السعودية للأوزون للمشاريع والحلول
-      البيئية والصحية. جميع الحقوق محفوظة. | من تصميم وتطوير
-      <a
-        href="https://do.com.sa/"
-        target="_blank"
-        class="text-Secondary font-bold underline mx-0.5 text-base"
-        aria-label="Visit DO website"
-        >DO</a
-      >
-    </h3>
+
+    <p class="px-4 text-center text-sm font-normal text-TextMD pt-6">
+      {{
+        locale === "ar"
+          ? `جميع الحقوق محفوظة لل الشركة السعودية للأوزون للمشاريع والحلول البيئية والصحية  &COPY; ${currentYear} — تنفيذ وتطوير بواسطة شركة  `
+          : `All rights reserved for Tech Ozone &COPY; ${currentYear} — Designed and developed by`
+      }}
+      <a href="https://do.com.sa/" target="_blank">
+        <img
+          src="~/assets/img/purpleDo.gif"
+          class="w-10 h-5 mx-1 inline-block"
+          width="40"
+          height="20"
+          alt="Do Logo"
+        />
+      </a>
+    </p>
   </footer>
 </template>
 
@@ -146,7 +152,7 @@ const localePath = useLocalePath();
 const { locale } = useI18n();
 
 const route = useRoute();
-
+const currentYear = new Date().getFullYear();
 const getPathWithoutLocale = (path: string) => {
   const segments = path.split("/");
   if (segments[1] && segments[1].length === 2) {

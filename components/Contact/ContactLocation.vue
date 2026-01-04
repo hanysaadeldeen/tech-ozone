@@ -27,7 +27,12 @@
             aria-label="Google Map Direction"
           >
             <Button title="احصل علي الاتجاهات" background="#ED2024" reverse>
-              <i class="fa-solid fa-diamond-turn-right"></i>
+              <img
+                src="~/assets/img/Utils/diamond-turn-right.svg"
+                alt="diamond-turn-right"
+                loading="lazy"
+                class="size-5"
+              />
             </Button>
           </a>
           <div

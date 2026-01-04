@@ -3,7 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  modules: ["nuxt-lucide-icons", "@nuxtjs/i18n"],
+  modules: [
+    "nuxt-lucide-icons",
+    "@nuxtjs/i18n",
+    "nuxt-seo-utils",
+    "@nuxtjs/sitemap",
+  ],
   components: [
     {
       path: "~/components",
@@ -20,16 +25,15 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts",
   },
-  nitro: {
-    port: 3001,
-    host: "127.0.0.1",
-  },
-  devServer: {
-    port: 3001,
-    host: "127.0.0.1",
-  },
+  // nitro: {
+  //   port: 3001,
+  //   host: "127.0.0.1",
+  // },
+  // devServer: {
+  //   port: 3001,
+  //   host: "127.0.0.1",
+  // },
 
-  // ssr: false,
   app: {
     head: {
       script: [],
@@ -38,10 +42,6 @@ export default defineNuxtConfig({
           rel: "icon",
           type: "image/png",
           href: "/LogoTap.svg",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css",
         },
       ],
       title: "الشركة السعودية للأوزون :: للمشاريع والحلول البيئي والصحية",
@@ -58,6 +58,21 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+  seo: {
+    meta: {
+      ogSiteName: "الشركة السعودية للأوزون :: للمشاريع والحلول البيئي والصحية",
+      applicationName:
+        "الشركة السعودية للأوزون :: للمشاريع والحلول البيئي والصحية",
+    },
+  },
+  routeRules: {
+    "/en/**": {
+      seoMeta: {
+        ogSiteName: "Tech Ozone",
+        applicationName: "Tech Ozone",
+      },
     },
   },
   // build: {
