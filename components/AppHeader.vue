@@ -50,13 +50,19 @@
             </nuxt-link>
           </div>
           <div class="lg:hidden text-2xl cursor-pointer sm:text-3xl z-[35]">
-            <i
-              class="fa-solid fa-bars-staggered"
+            <img
+              src="~/assets/img/Utils/bars.svg"
+              alt="bars"
+              loading="lazy"
+              class="w-8"
               :class="{ hidden: isSideBar }"
               @click="toggleSidebar"
             />
-            <i
-              class="fa-solid fa-xmark text-white"
+            <img
+              src="~/assets/img/Utils/xmark.svg"
+              alt="bars"
+              loading="lazy"
+              class="w-8"
               :class="{ hidden: !isSideBar }"
               @click="toggleSidebar"
             />

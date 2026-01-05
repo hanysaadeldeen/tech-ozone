@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     "nuxt-seo-utils",
     "@nuxtjs/sitemap",
   ],
+  site: {
+    url: "https://o3.saudiozone.com.sa/",
+  },
   components: [
     {
       path: "~/components",
@@ -44,12 +47,16 @@ export default defineNuxtConfig({
           href: "/LogoTap.svg",
         },
       ],
-      title: "الشركة السعودية للأوزون :: للمشاريع والحلول البيئي والصحية",
       meta: [
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
         {
-          name: "description",
-          content:
-            "نحن الشركة السعودية الأولى والرائدة في مجال التعقيم والتطهير بتقنية الأوزون، بخبرة تمتد منذ عام 2011 في تقديم حلول مبتكرة وصديقة للبيئة.",
+          property: "og:image",
+          content: "https://o3.saudiozone.com.sa/LogoTap.png",
+        },
+        {
+          name: "twitter:image",
+          content: "https://o3.saudiozone.com.sa/LogoTap.png",
         },
       ],
     },
@@ -62,9 +69,9 @@ export default defineNuxtConfig({
   },
   seo: {
     meta: {
-      ogSiteName: "الشركة السعودية للأوزون :: للمشاريع والحلول البيئي والصحية",
+      ogSiteName: "الشركة السعودية للأوزون للمشاريع والحلول البيئي والصحية",
       applicationName:
-        "الشركة السعودية للأوزون :: للمشاريع والحلول البيئي والصحية",
+        "الشركة السعودية للأوزون للمشاريع والحلول البيئي والصحية",
     },
   },
   routeRules: {

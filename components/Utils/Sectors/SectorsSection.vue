@@ -10,82 +10,50 @@
     <div class="mb-20 relative">
       <div class="flex justify-center gap-6 md:gap-10 flex-wrap">
         <SectorCard
-          v-for="(card, index) in CorCards"
+          v-for="(card, index) in data?.results"
           :key="card.id"
-          :title="card.title"
-          :description="card.description"
+          :title="card.name_ar"
+          :description="card.description_ar"
           :id="(index + 1).toString()"
         >
-          <img :src="card.img" :alt="card.title" width="24" height="24" />
+          <img
+            :src="card.icon_url"
+            :alt="card.name_ar"
+            width="24"
+            height="24"
+          />
         </SectorCard>
       </div>
     </div>
-    <!-- <Button title="استعرض كل القطاعات" background="#092892" link="/sectors" /> -->
   </section>
 </template>
 
 <script setup lang="ts">
 const { locale } = useI18n();
 
-import sectorimg from "../../../assets/img/sectorimg.svg";
-import chicken from "../../../assets/img/chicken.svg";
-import dates from "../../../assets/img/dates.svg";
-import hotel from "../../../assets/img/hotel.svg";
-import medical from "../../../assets/img/medical.svg";
-import plant from "../../../assets/img/plant.svg";
-import factory from "../../../assets/img/factory.svg";
-import darty from "../../../assets/img/darty.svg";
+export interface Sector {
+  id: number;
+  icon: string;
+  icon_url: string;
+  name_ar: string;
+  name_en: string;
+  description_ar: string;
+  description_en: string;
+  is_active: boolean;
+  created_at: string;
+  updated_at: string;
+}
 
-const CorCards = [
-  {
-    id: 1,
-    img: sectorimg,
-    title: "الحج والعمرة",
-    description: "خدمة وتعقيم المشاعر المقدسة.",
-  },
-  {
-    id: 2,
-    img: medical,
-    title: "القطاع الصحي",
-    description: "تعقيم طبي موثوق للمنشآت.",
-  },
-  {
-    id: 3,
-    img: chicken,
-    title: "قطاع الدواجن",
-    description: "تعقيم مزارع وإنتاج الدواجن.",
-  },
-  {
-    id: 4,
-    img: plant,
-    title: "القطاع الزراعي",
-    description: "تعقيم التربة والمياه الزراعية.",
-  },
-  {
-    id: 5,
-    img: dates,
-    title: "قطاع التمور",
-    description: "تعقيم التمور وجودة التخزين.",
-  },
-  {
-    id: 6,
-    img: hotel,
-    title: "قطاع الفنادق والسياحة",
-    description: "تعقيم الفنادق والمرافق السياحية.",
-  },
-  {
-    id: 6,
-    img: darty,
-    title: "قطاع المياه والصرف الصحي ",
-    description: "تعقيم التربة والمياه الزراعية",
-  },
-  {
-    id: 6,
-    img: factory,
-    title: "القطاع الصناعي",
-    description: "تعقيم الاجهزة والمعدات",
-  },
-];
+export interface PaginatedSectorsResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Sector[];
+}
+
+const { data } = useFetch<PaginatedSectorsResponse>(
+  "https://bk.saudiozone.com.sa/api/sector"
+);
 </script>
 
 <style scoped></style>

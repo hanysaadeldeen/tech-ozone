@@ -7,8 +7,6 @@
     </div>
     <SectorsStatisticsSection />
     <div class="max-w-[1208px] mx-auto">
-      <!-- <DevicesSection /> -->
-      <!-- <SuccessPartenerClients /> -->
       <LocalCertificatesSection />
     </div>
   </main>

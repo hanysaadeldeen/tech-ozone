@@ -23,6 +23,19 @@ onMounted(() => {
   setDirection();
 });
 watch(locale, setDirection, { immediate: true });
+
+useHead(() => ({
+  titleTemplate: (titleChunk?: string) => {
+    const siteName =
+      locale.value === "en"
+        ? "Tech Ozone"
+        : "الشركة السعودية للأوزون للمشاريع والحلول البيئي والصحية";
+
+    if (!titleChunk) return siteName;
+
+    return `${titleChunk} - ${siteName}`;
+  },
+}));
 </script>
 
 <style scoped>

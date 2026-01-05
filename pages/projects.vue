@@ -1,6 +1,6 @@
 <template>
-  <main class="gallery" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
-    <GalleryHeroSection />
+  <main class="projects" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+    <ProjectsHeroSection />
     <div class="max-w-[1208px] mx-auto">
       <div
         class="flex mt-[60px] md:mt-[120px] pb-8 md:pb-12 border-b border-[#E5E9F5]"
@@ -25,18 +25,12 @@
           </SwiperSlide>
         </Swiper>
       </div>
-      <div class="mt-8 md:mt-12">
-        <GalleryImageSection
-          title=" تطهير الكعبة المشرفة بالكامل"
-          desc=" مكة المكرمة"
-          date="2020م"
-          :images="images"
-        />
-        <GalleryImageSection
-          title="مصنع تمور الرمال الطيبة"
-          desc=" مكة المكرمة"
-          date="2020م"
-          :images="images2"
+      <div class="mt-8 md:mt-12" v-for="project in data?.results">
+        <ProjectsImageSection
+          :title="project.title"
+          :desc="project.description"
+          :date="project.year"
+          :images="project.images"
         />
       </div>
     </div>
@@ -53,99 +47,40 @@ import "swiper/css/pagination";
 const modules = [Pagination];
 const FaqsFilter = ref("photography");
 
-// import one from "../assets/img/Gallery/one.svg";
-import two from "~/assets/img/Gallery/two.svg";
-import three from "~/assets/img/Gallery/three.svg";
-import four from "~/assets/img/Gallery/four.svg";
-import five from "~/assets/img/Gallery/five.svg";
-import six from "~/assets/img/Gallery/six.svg";
-import seven from "~/assets/img/Gallery/seven.webp";
-import eight from "~/assets/img/Gallery/eight.webp";
-import nine from "~/assets/img/Gallery/nine.svg";
-import ten from "~/assets/img/Gallery/ten.svg";
-import eleven from "~/assets/img/Gallery/eleven.svg";
-import twelve from "~/assets/img/Gallery/twelve.webp";
-import thirteen from "~/assets/img/Gallery/thrteen.webp";
-import fourteen from "~/assets/img/Gallery/fourteen.svg";
-import fifteen from "~/assets/img/Gallery/fivteen.webp";
-// import sixteen from "~/assets/img/Gallery/sixteen.webp";
-import seventeen from "~/assets/img/Gallery/seventeen.svg";
-import eighteen from "~/assets/img/Gallery/eighteen.webp";
-import nineteen from "~/assets/img/Gallery/ninteen.svg";
-import twente from "~/assets/img/Gallery/twentee.webp";
-import twenteOne from "~/assets/img/Gallery/twenteOne.svg";
-import twenteTwo from "~/assets/img/Gallery/twenteTwo.svg";
-import twenteThree from "~/assets/img/Gallery/twenteThree.webp";
-import twenteFour from "~/assets/img/Gallery/twenteFour.svg";
-// import twenteFive from "~/assets/img/Gallery/twenteFive.svg";
+export interface GalleryImage {
+  id: number;
+  image: string;
+  image_url: string;
+  caption: string;
+  order: number;
+  uploaded_at: string;
+}
 
-const images = [two, three, four, five, six];
-const images2 = [seventeen, nineteen, twente, twenteThree, twenteFour];
+export interface GalleryItem {
+  id: number;
+  title: string;
+  city: string;
+  year: number;
+  date: string;
+  description: string;
+  order: number;
+  is_active: boolean;
+  images: GalleryImage[];
+  images_count: number;
+  created_at: string;
+  updated_at: string;
+}
 
-const active = ref(0);
+export interface GalleryResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: GalleryItem[];
+}
 
-const setActive = (i: number) => {
-  active.value = i;
-};
-
-const photography = [
-  // { id: 1, name: "one", src: one },
-  { id: 2, name: "two", src: two },
-  { id: 3, name: "three", src: three },
-  { id: 4, name: "four", src: four },
-  { id: 5, name: "five", src: five },
-  { id: 6, name: "six", src: six },
-  { id: 7, name: "seven", src: seven },
-  { id: 8, name: "eight", src: eight },
-  { id: 9, name: "nine", src: nine },
-  { id: 10, name: "ten", src: ten },
-  { id: 11, name: "eleven", src: eleven },
-  { id: 12, name: "twelve", src: twelve },
-  { id: 13, name: "thirteen", src: thirteen },
-  { id: 14, name: "fourteen", src: fourteen },
-  { id: 15, name: "fifteen", src: fifteen },
-  // { id: 16, name: "sixteen", src: sixteen },
-  { id: 17, name: "seventeen", src: seventeen },
-  { id: 18, name: "eighteen", src: eighteen },
-  { id: 19, name: "nineteen", src: nineteen },
-  { id: 20, name: "twente", src: twente },
-  { id: 21, name: "twenteOne", src: twenteOne },
-  { id: 22, name: "twenteTwo", src: twenteTwo },
-  { id: 23, name: "twenteThree", src: twenteThree },
-  { id: 24, name: "twenteFour", src: twenteFour },
-  // { id: 25, name: "twenteFive", src: twenteFive },
-];
-
-const isModalOpen = ref(false);
-const selectedImage = ref("");
-
-const openModal = (imageSrc: string) => {
-  selectedImage.value = imageSrc;
-  isModalOpen.value = true;
-  document.body.style.overflow = "hidden";
-};
-
-const closeModal = () => {
-  isModalOpen.value = false;
-  document.body.style.overflow = "auto";
-};
-
-// Close modal on escape key
-onMounted(() => {
-  const handleEscape = (e: KeyboardEvent) => {
-    if (e.key === "Escape" && isModalOpen.value) {
-      closeModal();
-    }
-  };
-  document.addEventListener("keydown", handleEscape);
-  onUnmounted(() => {
-    document.removeEventListener("keydown", handleEscape);
-  });
-});
-
-const INITIAL_COUNT = 30;
-const visibleCount = ref(INITIAL_COUNT);
-const visibleItems = computed(() => photography.slice(0, visibleCount.value));
+const { data } = useFetch<GalleryResponse>(
+  () => "https://bk.saudiozone.com.sa/api/events/"
+);
 </script>
 
 <style scoped>
@@ -181,73 +116,5 @@ const visibleItems = computed(() => photography.slice(0, visibleCount.value));
 .swiper-slide:hover {
   background-color: #ed2024;
   color: white;
-}
-
-.testAgain img {
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.testAgain .overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out;
-}
-
-.testAgain div:hover .overlay {
-  opacity: 1;
-}
-
-.testAgain div:hover img {
-  transform: scale(1.1);
-}
-
-.fixed {
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.image-popup-animation {
-  animation: imagePopup 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  transform-origin: center;
-}
-
-@keyframes imagePopup {
-  0% {
-    opacity: 0;
-    transform: scale(0.1) translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.image-popup-animation {
-  animation: imagePopup 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-}
-
-@keyframes imagePopup {
-  0% {
-    opacity: 0;
-    transform: scale(0.1) translateY(30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
 }
 </style>
