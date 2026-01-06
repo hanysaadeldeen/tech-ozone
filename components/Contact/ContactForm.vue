@@ -278,7 +278,7 @@ const onSubmit = async (values: any, { resetForm }: any) => {
       {
         method: "POST",
         body: {
-          first_name: values.FirstName,
+          first_name: values.FullName,
           last_name: values.LastName,
           phone: values.phoneNumber,
           email: values.email,
