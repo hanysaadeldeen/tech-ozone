@@ -4,7 +4,7 @@
   >
     <div class="flex justify-between items-center gap-2">
       <p class="md:text-base lg:text-lg font-medium text-TextD">
-        {{ $t(question) }}
+        {{ question }}
       </p>
       <i
         class="fa-solid fa-chevron-down cursor-pointer text-TextMD text-xl"
@@ -21,7 +21,7 @@
       class="text-TextMD text-sm md:text-base font-normal"
       v-if="toggleQuestion"
     >
-      {{ $t(answer) }}
+      {{ answer }}
     </span>
   </div>
 </template>

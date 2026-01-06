@@ -68,7 +68,7 @@
   </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { locale } = useI18n();
 // import AOS from "aos";
 // import "aos/dist/aos.css";
@@ -133,12 +133,18 @@ const sections = [
   },
 ];
 
-const scrollToSection = (sectionId) => {
+const scrollToSection = (sectionId: any) => {
   const element = document.getElementById(sectionId);
   if (element) {
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 };
+
+import type { SEODataFetch } from "~/types/seo";
+const { data } = await useFetch<SEODataFetch>(
+  () => "https://bk.saudiozone.com.sa/api/pages/terms"
+);
+usePageSeo(data, locale);
 </script>
 <style scoped>
 .startSection2 {

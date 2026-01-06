@@ -50,7 +50,7 @@
             <span class="text-red-500 text-sm">{{ errors.LastName }}</span>
           </div>
         </div>
-        <div class="flex flex-col w-full mb-8">
+        <div class="flex flex-col w-full mb-6">
           <label
             for="email"
             class="text-TextD3 w-fit font-normal text-sm mb-2 cursor-pointer inline-block"
@@ -75,34 +75,26 @@
           />
           <span class="text-red-500 text-sm">{{ errors.email }}</span>
         </div>
-        <div class="flex flex-col w-full mb-8">
+        <div class="flex flex-col w-full mb-6">
           <label
-            for="subject"
-            class="text-TextD3 w-fit font-normal text-sm mb-2 cursor-pointer inline-block"
+            for="phoneNumber"
+            class="text-text w-fit font-normal text-sm mb-2 cursor-pointer inline-block"
           >
-            {{ locale === "ar" ? "الموضوع" : " Request Type" }}
+            {{ locale === "ar" ? "رقم الهاتف" : "Phone Number" }}
           </label>
           <Field
-            id="subject"
-            name="subject"
-            as="select"
-            class="inputBack px-2.5 md:px-4 h-[48px] w-full border focus:outline-none focus:ring-2 focus:ring-Primary"
-            :class="{ '!border-red-500': errors.subject }"
-          >
-            <option
-              value=""
-              disabled
-              selected
-              class="text-paragraph-mediumDark"
-            >
-              {{ locale === "en" ? "Select Request Type" : "اختر الموضوع" }}
-            </option>
-            <option v-for="option in subjects" :key="option" :value="option">
-              {{ $t(option) }}
-            </option>
-          </Field>
-          <span class="text-red-500 text-sm">{{ errors.subject }}</span>
+            id="phoneNumber"
+            name="phoneNumber"
+            type="text"
+            :placeholder="
+              locale === 'en' ? 'e.g. +9665xxxxxxx' : 'أدخل رقم الهاتف '
+            "
+            class="inputBack py-2 md:py-3 px-2.5 md:px-4 h-[48px] w-full border focus:outline-none focus:ring-2 focus:ring-primary-main"
+            :class="{ '!border-red-500': errors.phoneNumber }"
+          />
+          <span class="text-red-500 text-sm">{{ errors.phoneNumber }}</span>
         </div>
+
         <div class="flex flex-col w-full lg:max-w-[640px]">
           <label
             for="message"
@@ -132,6 +124,12 @@
             >ابدأ مشروعك الآن</span
           >
         </button>
+        <p v-if="contactMessage" class="my-2 text-center text-primary-300">
+          {{ contactMessage }}
+        </p>
+        <p v-if="contactMessageE" class="my-2 text-center text-red-500">
+          {{ contactMessageE }}
+        </p>
       </Form>
     </div>
     <div class="socailMedia w-full mx-auto max-w-[560px]">
@@ -203,7 +201,9 @@ import { Form, Field } from "vee-validate";
 import * as yup from "yup";
 const isOpenSuccess = ref(false);
 const isLoading = ref(false);
-const { sendEmail } = useEmail();
+const contactMessage = ref("");
+const contactMessageE = ref("");
+// const { sendEmail } = useEmail();
 
 const subjects = [
   "تصميم ساحلي عصري",
@@ -246,21 +246,14 @@ const schema = yup.object({
   phoneNumber: yup
     .string()
     .matches(
-      /^\+?[0-9]{10,}$/,
+      /^(\+?20|0)?1[0-2,5]\d{8}$|^(\+?966|0)?5\d{8}$/,
       locale.value === "en"
-        ? "Number must be at least 10 digits"
-        : "يجب أن يكون الرقم على الأقل 10 أرقام"
+        ? "Please enter a valid Egyptian or Saudi phone number"
+        : "من فضلك أدخل رقم هاتف مصري أو سعودي صحيح"
     )
     .required(
       locale.value === "en" ? "Phone number is required" : "رقم الهاتف مطلوب"
     ),
-
-  subject: yup
-    .string()
-    .required(
-      locale.value === "en" ? "Please select a subject" : "يرجى اختيار موضوع"
-    ),
-
   message: yup
     .string()
     .min(
@@ -277,18 +270,40 @@ const schema = yup.object({
     )
     .required(locale.value === "en" ? "Message is required" : "الرسالة مطلوبة"),
 });
-const onSubmit = async (values: any) => {
+const onSubmit = async (values: any, { resetForm }: any) => {
   try {
     isLoading.value = true;
-    const response = await sendEmail(values);
-
-    if (response.status === 200) {
-      console.log("success");
+    const { data, pending, error } = await useFetch(
+      "https://bk.saudiozone.com.sa/api/contact/",
+      {
+        method: "POST",
+        body: {
+          first_name: values.FirstName,
+          last_name: values.LastName,
+          phone: values.phoneNumber,
+          email: values.email,
+          message: values.message,
+        },
+      }
+    );
+    if (error.value) {
+      throw new Error("Unknown error occurred");
     }
-    isLoading.value = false;
+    if (data.value) {
+      contactMessage.value =
+        locale.value === "en"
+          ? "Your message has been sent successfully"
+          : "تم إرسال رسالتك بنجاح. سنتواصل معك قريباً";
+      resetForm();
+      isOpenSuccess.value = true;
+    }
   } catch (error) {
+    contactMessageE.value =
+      locale.value === "en"
+        ? "There was an error sending your message. Please try again later."
+        : "حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى لاحقاً.";
+  } finally {
     isLoading.value = false;
-    isOpenSuccess.value = true;
   }
 };
 import mail from "../assets/img/Contact/mail.svg";

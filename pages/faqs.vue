@@ -168,8 +168,15 @@ const FAQs = faqs.map((faq, index) => ({
   id: faq.id,
   question: faq.question,
   answer: faq.answer,
-  toggle: index < 1, // أول سؤالين مفتوحين، والباقي مغلقين
+  toggle: index < 1,
 }));
+
+import type { SEODataFetch } from "~/types/seo";
+
+const { data } = await useFetch<SEODataFetch>(
+  () => "https://bk.saudiozone.com.sa/api/pages/faqs"
+);
+usePageSeo(data, locale);
 </script>
 
 <style scoped>

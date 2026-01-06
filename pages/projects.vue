@@ -81,6 +81,12 @@ export interface GalleryResponse {
 const { data } = useFetch<GalleryResponse>(
   () => "https://bk.saudiozone.com.sa/api/events/"
 );
+
+import type { SEODataFetch } from "~/types/seo";
+const { data: DAtaSEO } = await useFetch<SEODataFetch>(
+  () => "https://bk.saudiozone.com.sa/api/pages/projects/"
+);
+usePageSeo(DAtaSEO, locale);
 </script>
 
 <style scoped>

@@ -16,6 +16,12 @@
 
 <script setup lang="ts">
 const { locale } = useI18n();
+import type { SEODataFetch } from "~/types/seo";
+
+const { data } = await useFetch<SEODataFetch>(
+  () => "https://bk.saudiozone.com.sa/api/pages/contact-us"
+);
+usePageSeo(data, locale);
 </script>
 
 <style scoped>
