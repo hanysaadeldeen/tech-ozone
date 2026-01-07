@@ -86,25 +86,6 @@
                 loading="lazy"
               />
             </picture>
-
-            <div
-              class="tinyflow-slide__card max-w-[1208px] mx-auto max-2xl:px-6 z-20 relative"
-            >
-              <div class="container">
-                <div class="max-w-[584px]">
-                  <h1
-                    class="text-3xl md:text-5xl lg:!leading-[72px] font-semibold text-white text-center !mb-4"
-                  >
-                    {{ slide.title }}
-                  </h1>
-                  <p
-                    class="text-xl md:text-2xl lg:text-3xl font-normal text-center text-[#C3CAD3]"
-                  >
-                    {{ slide.description }}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </SwiperSlide>
       </Swiper>
@@ -148,7 +129,6 @@ const slides = [
     img800: ozone,
     img1200: ozone,
     title: "",
-    description: "",
   },
   {
     img: water,
@@ -156,17 +136,14 @@ const slides = [
     img800: ozone,
     img1200: water1200,
     title: "",
-    description: "",
   },
   {
     img: date,
     title: "",
-    description: "",
   },
   {
     img: hotel,
     title: "",
-    description: "",
   },
   {
     img: checken,
@@ -174,7 +151,6 @@ const slides = [
     img800: checken800,
     img1200: checken1200,
     title: "",
-    description: "",
   },
 ];
 

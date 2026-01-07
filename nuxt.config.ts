@@ -32,15 +32,6 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     vueI18n: "./i18n.config.ts",
   },
-  // nitro: {
-  //   port: 3001,
-  //   host: "127.0.0.1",
-  // },
-  // devServer: {
-  //   port: 3001,
-  //   host: "127.0.0.1",
-  // },
-
   app: {
     head: {
       script: [],
@@ -86,15 +77,4 @@ export default defineNuxtConfig({
       },
     },
   },
-  // build: {
-  //   extractCSS: true,
-  //   optimizeCSS: true,
-  //   postcss: {
-  //     plugins: {
-  //       tailwindcss: {},
-  //       autoprefixer: {},
-  //       cssnano: {},
-  //     },
-  //   },
-  // },
 });

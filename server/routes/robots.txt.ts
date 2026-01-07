@@ -3,6 +3,6 @@ export default defineEventHandler(async (event) => {
     responseType: "text",
   });
 
-  event.node.res.setHeader("Content-Type", "text/plain; charset=utf-8");
+  setHeader(event, "Content-Type", "text/plain; charset=utf-8");
   return txt.endsWith("\n") ? txt : txt + "\n";
 });
