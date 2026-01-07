@@ -12,6 +12,10 @@ export default defineNuxtConfig({
   site: {
     url: "https://o3.saudiozone.com.sa/",
   },
+  sitemap: {
+    siteUrl: "https://o3.saudiozone.com.sa/",
+    sources: ["/__sitemap__/blogs"],
+  },
   components: [
     {
       path: "~/components",
