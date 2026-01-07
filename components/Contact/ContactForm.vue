@@ -182,13 +182,6 @@
           اطلب عرض السعر الآن من الشركة السعودية للأوزون لمناقشة احتياجاتك،
           واحصل على الحل الأمثل بتقنيات الأوزون المتطورة في أسرع وقت.
         </p>
-        <!-- <div
-          class="border rounded-full py-2.5 px-10 w-fit flex max-md:mx-auto items-center justify-center flex-wrap gap-2 mt-8 cursor-pointer"
-        >
-          <p class="text-sm md:text-base font-medium text-white">
-            اطلب عرض سعر الآن
-          </p>
-        </div> -->
       </div>
     </div>
   </div>
