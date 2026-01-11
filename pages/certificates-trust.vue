@@ -42,10 +42,7 @@ interface PartnerCategory {
   partners: any[];
 }
 
-interface PartnersType {
-  Target: PartnerCategory[];
-}
-const { data: partners } = await useFetch<PartnersType>(
+const { data: partners } = await useFetch<PartnerCategory[]>(
   "https://bk.saudiozone.com.sa/api/partners"
 );
 
