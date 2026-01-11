@@ -9,10 +9,9 @@
     <HomeHeroSection />
     <div class="max-w-[1208px] mx-auto">
       <CoresSection />
-      <ScientificPartnershipsSection />
+      <ScientificPartnershipsSection :section="sections[0]" />
       <SectorsSection />
-      <!-- <SuccessPartenerClients /> -->
-      <LocalCertificatesSection />
+      <LocalCertificatesSection :section="sections[2]" />
       <DevicesSection />
     </div>
     <WhyUsSection />
@@ -27,7 +26,6 @@
 <script setup lang="ts">
 const { locale } = useI18n();
 import type { SEODataFetch } from "~/types/seo";
-
 const { data } = await useFetch<SEODataFetch>(
   () => "https://bk.saudiozone.com.sa/api/pages/home"
 );
@@ -63,6 +61,29 @@ useHead(() => {
     ],
   };
 });
+
+type PartnerCategorySlug = "testimonial" | "partner" | "alliance";
+
+interface PartnerCategory {
+  category_id: number;
+  category_slug: PartnerCategorySlug;
+  category_name_ar: string;
+  category_name_en: string;
+  category_description_ar: string;
+  category_description_en: string;
+  partners: any[];
+}
+
+interface PartnersType {
+  Target: PartnerCategory[];
+}
+const { data: partners } = await useFetch<PartnersType>(
+  "https://bk.saudiozone.com.sa/api/partners"
+);
+
+const sections = computed<PartnerCategory[]>(() => partners.value ?? []);
+
+// console.log(sections?.value[0]);
 </script>
 <style scoped>
 .sr-only {

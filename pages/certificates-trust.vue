@@ -37,6 +37,8 @@ interface PartnerCategory {
   category_slug: PartnerCategorySlug;
   category_name_ar: string;
   category_name_en: string;
+  category_description_ar: string;
+  category_description_en: string;
   partners: any[];
 }
 

@@ -2,7 +2,7 @@
   <section class="LocalCertificates mx-auto max-2xl:px-6">
     <section-title
       :btnText="section.category_name_ar"
-      description="شراكات استراتيجية تعزز ثقة عملائنا"
+      :description="section.category_description_ar"
     />
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 relative"
@@ -25,6 +25,8 @@ interface PartnerCategory {
   category_slug: string;
   category_name_ar: string;
   category_name_en: string;
+  category_description_ar: string;
+  category_description_en: string;
   partners: any[];
 }
 interface Props {
