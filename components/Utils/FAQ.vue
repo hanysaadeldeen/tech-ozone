@@ -6,16 +6,18 @@
       <p class="md:text-base lg:text-lg font-medium text-TextD">
         {{ question }}
       </p>
-      <i
-        class="fa-solid fa-chevron-down cursor-pointer text-TextMD text-xl"
+      <LucideChevronDown
+        :size="24"
+        class="text-TextMD cursor-pointer"
         v-if="!toggleQuestion"
         @click="toggleQuestion = !toggleQuestion"
-      ></i>
-      <i
-        class="fa-solid fa-chevron-up cursor-pointer text-TextMD text-xl"
+      />
+      <LucideChevronUp
+        :size="24"
+        class="text-TextMD cursor-pointer"
         v-if="toggleQuestion"
         @click="toggleQuestion = !toggleQuestion"
-      ></i>
+      />
     </div>
     <span
       class="text-TextMD text-sm md:text-base font-normal"
