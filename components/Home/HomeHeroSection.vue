@@ -49,31 +49,11 @@
       >
         <SwiperSlide v-for="(slide, i) in slides" :key="'thumb-' + i">
           <div class="tinyflow-slide">
-            <!-- <img
-              class="tinyflow-slide__background__element"
-              :src="slide.img"
-              :alt="slide.title"
-              draggable="false"
-            />
-            <picture>
-              <source :srcset="slide.img480" media="(max-width: 480px)" />
-              <source :srcset="slide.img800" media="(max-width: 800px)" />
-              <source :srcset="slide.img1200" media="(max-width: 1200px)" />
-              <img
-                class="tinyflow-slide__background__element"
-                :src="slide.img"
-                :alt="slide.title"
-                draggable="false"
-              />
-            </picture> -->
-
-            <!-- Background صورة واحدة كـ background -->
             <div
               class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat object-cover"
               :style="{ backgroundImage: `url(${slide.img})` }"
             ></div>
 
-            <!-- Responsive Foreground صورة -->
             <picture class="absolute inset-0 w-full h-full block">
               <source :srcset="slide.img480" media="(max-width: 480px)" />
               <source :srcset="slide.img800" media="(max-width: 800px)" />
@@ -107,57 +87,54 @@ import "swiper/css/effect-fade";
 
 const modules = [Navigation, Autoplay, Keyboard, EffectFade];
 
-import ozone from "../../assets/img/Projects/ozone.webp";
-import hotel from "/images/hotel/hotel.webp";
-
-import date from "/images/date/date.webp";
-
-import water from "/images/water/water.webp";
-import water480 from "/images/water/water-480.webp";
-import water800 from "/images/water/water-800.webp";
-import water1200 from "/images/water/water-1200.webp";
-
-import checken from "/images/checken/checken.webp";
-import checken480 from "/images/checken/checken-480.webp";
-import checken800 from "/images/checken/checken-800.webp";
-import checken1200 from "/images/checken/checken-1200.webp";
-
-const slides = [
-  {
-    img: ozone,
-    img480: ozone,
-    img800: ozone,
-    img1200: ozone,
-    title: "",
-  },
-  {
-    img: water,
-    img480: checken480,
-    img800: ozone,
-    img1200: water1200,
-    title: "",
-  },
-  {
-    img: date,
-    title: "",
-  },
-  {
-    img: hotel,
-    title: "",
-  },
-  {
-    img: checken,
-    img480: checken480,
-    img800: checken800,
-    img1200: checken1200,
-    title: "",
-  },
-];
-
 const nextEl = ref<HTMLElement | null>(null);
 const prevEl = ref<HTMLElement | null>(null);
 const speed = 1000;
 const autoplayDelay = 7000;
+
+interface SliderResult {
+  id: number;
+  images: {
+    size: string;
+    url: string;
+  }[];
+}
+interface SliderResponse {
+  count: number;
+  next: number;
+  previous: number;
+  results: SliderResult[];
+}
+import ozone from "/images/ozone.webp";
+const defaultSlide = {
+  img: ozone,
+  img1200: ozone,
+  img800: ozone,
+  img480: ozone,
+  title: "ozone-default-slide",
+};
+
+const { data: SliderImages } = await useFetch<SliderResponse>(
+  "https://bk.saudiozone.com.sa/api/slider"
+);
+
+const slides = computed(() => {
+  const results = SliderImages.value?.results;
+  if (!results || results.length === 0) {
+    return [defaultSlide];
+  }
+  return results.map((item: SliderResult) => {
+    const get = (size: string) =>
+      item.images?.find((x: any) => x.size === size)?.url || defaultSlide.img;
+    return {
+      img: get("1920px"),
+      img1200: get("1200px"),
+      img800: get("800px"),
+      img480: get("400px"),
+      title: `slider-${item.id}`,
+    };
+  });
+});
 </script>
 <style scoped>
 :root {

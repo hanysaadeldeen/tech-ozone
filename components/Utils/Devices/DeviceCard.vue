@@ -15,7 +15,7 @@
         <p class="text-TextM font-normal text-sm md:text-base mb-3 md:mb-6">
           {{ description }}
         </p>
-        <ul
+        <!-- <ul
           class="relative mb-1 md:mb-2"
           v-for="(details, index) in details"
           :class="{ 'mb-0': index === 3 }"
@@ -26,7 +26,7 @@
           <li class="mr-4 text-TextMD font-normal text-sm md:text-base">
             {{ details }}
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -37,7 +37,6 @@ defineProps<{
   title: string;
   description: string;
   img: string;
-  details: string[];
 }>();
 </script>
 

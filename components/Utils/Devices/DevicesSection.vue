@@ -12,11 +12,10 @@
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
       >
         <DeviceCard
-          v-for="device in Devices"
-          :title="device.title"
-          :description="device.description"
-          :details="device.details"
-          :img="device.img"
+          v-for="device in DevicesImages?.results"
+          :title="device.title_ar"
+          :description="device.description_ar"
+          :img="device.image"
         />
       </div>
     </div>
@@ -29,48 +28,29 @@
 
 <script setup lang="ts">
 const { locale } = useI18n();
-
-import HVAC from "../../../assets/img/Devices/HVAC.webp";
-import Air from "../../../assets/img/Devices/air.webp";
-import Water from "../../../assets/img/Devices/water.webp";
-
-const Devices = [
-  {
-    id: 1,
-    title: "جهاز تطهير المياه المنزلي",
-    description:
-      "جهاز تك أوزون لتنقية وتطهير المياه بفعالية عالية وتقنية حديثة.",
-    img: HVAC,
-    details: [
-      "تطهير وتعقيم مياه الشرب وسهولة التركيب والإستخدام",
-      "القضاء علي البكتريا والجراثيم بمياه الصنبور",
-      "أقوي وأوسع مطهر ميكروبيولوجي متوفر حتي الأن",
-    ],
-  },
-  {
-    id: 2,
-    title: "جهاز غسيل و تطهير الخضار و الفواكه و اللحوم",
-    description:
-      "جهاز تك اوزون لغسيل وتطهير الفاكهة والخضراوات واللحوم و المأكولات البحرية ",
-    img: Air,
-    details: [
-      "القضاء علي البكتيريا والفطريات والاستافيلوكوكس وخفض المبيدات",
-      "سهل وأمن الاستخدام",
-      "القضاء علي ميكروب الليستريا",
-    ],
-  },
-  {
-    id: 3,
-    title: "الجهاز المتنقل SO لتطهير الهواء و الأسطح",
-    description:
-      "جهاز لتطهير الهواء و الأسطح من الفيروسات و الميكروبات و لإزالة الروائح و الدخان من المنازل",
-    img: Water,
-    details: [
-      "ضمان لمدة عام ، و لا يشمل الضمان سوء الاستخدام أو الكسر",
-      "توفير قطع الغيار و الصيانة - على العميل اتباع إرشادات الاستخدام و التشغيل",
-    ],
-  },
-];
+interface Device {
+  id: number;
+  title_ar: string;
+  title_en: string;
+  description_ar: string;
+  description_en: string;
+  image: string;
+  image_url: string;
+  order: number;
+  is_active: boolean;
+  is_featured: boolean;
+  created_at: string;
+  updated_at: string;
+}
+interface DevicesResponse {
+  count: number;
+  next: number;
+  previous: number;
+  results: Device[];
+}
+const { data: DevicesImages } = await useFetch<DevicesResponse>(
+  "https://bk.saudiozone.com.sa/api/devices"
+);
 </script>
 
 <style scoped></style>
